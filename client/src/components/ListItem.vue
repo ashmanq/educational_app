@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="lesson">
+  <div v-on:click="openLessonPage()" class="lesson">
     <h3>{{ lesson.name }}</h3>
-    <img v-bind:src="lesson.image">
+    <img v-bind:src="lesson.image" width="350">
   </div>
 </template>
 
@@ -11,7 +11,9 @@ export default {
   props: ['lesson'],
 
   methods: {
+    openLessonPage() {
 
+    },
   },
 }
 </script>
@@ -21,5 +23,12 @@ export default {
 .lesson {
   display: flex;
   flex-direction: column;
+  background-color: #f5ce42
 }
+
+.lesson:hover {
+  background-color: #ba9e3a
+}
+
+
 </style>

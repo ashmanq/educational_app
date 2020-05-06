@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <lesson-list></lesson-list>
+    <h1>Education App</h1>
+    <lesson-list :lessons="lessons"></lesson-list>
   </div>
 </template>
 
 <script>
-import LessonList from '@/components/LessonList.vue'
-import LessonService from '@/services/LessonService.js'
+import LessonList from '@/components/LessonList.vue';
+import LessonService from '@/services/LessonService.js';
 import {eventBus} from '@/main.js';
 
 export default {
@@ -15,6 +16,10 @@ export default {
     return {
       lessons: []
     };
+  },
+  mounted() {
+    LessonService.getLessons()
+    .then((lessons) => this.lessons = lessons);
   },
   components: {
     'lesson-list': LessonList

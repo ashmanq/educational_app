@@ -1,6 +1,6 @@
 <template lang="html">
    <div class="lesson-list">
-     <list-item v-for="(lesson, index) in lessons" :lesson="lesson", :key="index"></list-item>
+     <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
    </div>
 </template>
 
@@ -22,5 +22,6 @@ export default {
 
 .lesson-list {
   display: flex;
+  justify-content: space-around;
 }
 </style>

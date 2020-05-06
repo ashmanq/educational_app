@@ -24,6 +24,6 @@ export default {
   deleteLesson(id) {
     return fetch(baseUrl + id, {
       method: 'DELETE'
-    })l
+    })
   }
 }
