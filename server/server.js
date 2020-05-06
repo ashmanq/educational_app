@@ -11,8 +11,8 @@ app.use(cors())
 MongoClient.connect('mongodb://localhost:27017')
 .then((client) => {
   const db = client.db('lessons_db');
-  const lessons_db = db.collection('lessons_db');
-  const lessonsRouter = createRouter(lessons_db)
+  const lessonsCollection = db.collection('lessons');
+  const lessonsRouter = createRouter(lessonsCollection)
   app.use('/api/lessons', lessonsRouter);
 
 })
