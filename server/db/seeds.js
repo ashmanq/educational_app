@@ -23,6 +23,26 @@ db.lessons.insertMany(
         ]
     },
     {
+          name: "Savannah Animals",
+          image: "https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+          details: [{
+                  name: "Elephant",
+                  text: "Elephants are matriarchal, meaning they live in female-led groups. The matriarch is usually the biggest and oldest. She presides over a multi-generational herd that includes other females, called cows, and their young. Adult males, called bulls, tend to roam on their own, sometimes forming smaller, more loosely associated all-male groups. Having a baby elephant is a serious commitment. Elephants have a longer pregnancy than any other mammal—almost 22 months. Cows usually give birth to one calf every two to four years. At birth, elephants already weigh some 200 pounds and stand about three feet tall.",
+                  pic: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+              },
+              {
+                  name: "Zebra",
+                  text: "No animal has a more distinctive coat than the zebra. Each animal's stripes are as unique as fingerprints—no two are exactly alike—although each of the three species has its own general pattern.",
+                  pic: "https://images.unsplash.com/photo-1515205244153-fce4e5d8bc49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+              },
+              {
+                  name: "Lion",
+                  text: "Lions have been admired throughout history for as symbols of courage and strength. These iconic animals have powerful bodies—in the cat family, they’re second in size only to tigers—and roars that can be heard from five miles away. An adult lion’s coat is yellow-gold, and juveniles have some light spots that disappear with age. Only male lions typically boast manes, the impressive fringe of long hair that encircles their heads.",
+                  pic: "https://images.unsplash.com/photo-1519066629447-267fffa62d4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+              }
+          ]
+      },
+    {
         name: "Human Body",
         image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80",
         details: [{
