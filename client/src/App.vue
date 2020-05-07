@@ -43,7 +43,7 @@ html {
 
 body {
   margin-top: 2%;
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;

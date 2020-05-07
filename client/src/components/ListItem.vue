@@ -38,7 +38,7 @@ a {
 .lesson:hover {
   /* background-color: #ba9e3a; */
   /* background: rgba(0, 0, 0, 0.1); */
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .lesson:hover img {
