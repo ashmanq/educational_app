@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="list">
     <lesson-list :lessons="lessons"></lesson-list>
   </div>
 
@@ -28,4 +28,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  /* .list {
+    background: rgba(0, 0, 0);
+    width: 50%;
+  } */
 </style>
