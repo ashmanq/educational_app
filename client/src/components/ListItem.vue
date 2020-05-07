@@ -1,5 +1,5 @@
 <template lang="html">
-  <div v-on:click="openLessonPage()" class="lesson">
+  <div class="lesson">
     <router-link :to="{ name: 'lesson', params: {lesson} }">
       <h3>{{ lesson.name }}</h3>
       <img v-bind:src="lesson.image" width="350">

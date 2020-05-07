@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <h1><router-link :to="{ name: '', params: {} }">Education App</router-link></h1>
+      <h1>Education App</h1>
     </nav>
     <router-view id="view"></router-view>
   </div>
