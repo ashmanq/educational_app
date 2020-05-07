@@ -1,5 +1,5 @@
 use lessons_db;
-db.dropDatabase;
+db.dropDatabase();
 
 db.lessons.insertMany(
   [{
