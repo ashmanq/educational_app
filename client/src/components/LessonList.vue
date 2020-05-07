@@ -26,5 +26,8 @@ export default {
   justify-content: center;
   /* margin: 5px; */
   flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+
 }
 </style>

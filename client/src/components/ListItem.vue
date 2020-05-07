@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="lesson">
     <router-link :to="{ name: 'lesson', params: {lesson} }">
-      <h3>{{ lesson.name }}</h3>
+      <h3>The {{ lesson.name }}</h3>
       <img v-bind:src="lesson.image" width="350">
     </router-link>
   </div>
@@ -25,37 +25,37 @@ export default {
 .lesson {
   display: flex;
   flex-direction: column;
-  background-color: #f5ce42;
+  background-color: #F5CE42;
   margin: 35px;
-  color: #2c3e50;
+  color: #2C3E50;
   transition: 0.3s;
 }
 
-a {
-  color: #2c3e50;
+.lesson img {
+  width: 350px;
+  height: 250px;
 }
 
+a {
+  color: #2C3E50;
+}
 .lesson:hover {
-  /* background-color: #ba9e3a; */
+  /* background-color: #BA9E3A; */
   /* background: rgba(0, 0, 0, 0.1); */
   /* border: 1px solid black; */
 }
-
 .lesson:hover img {
   /* opacity: 0.1; */
   /* background-blend-mode: overlay; */
 }
-
 .lesson:hover {
   animation: myfirst 0.1s;
   position: relative;
   animation-fill-mode: forwards;
 }
-
 @keyframes myfirst {
   0% {top: 0;}
   100% {top: 5px;}
 }
-
 
 </style>
