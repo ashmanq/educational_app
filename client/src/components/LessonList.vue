@@ -23,5 +23,6 @@ export default {
 .lesson-list {
   display: flex;
   justify-content: space-around;
+  /* margin: 5px; */
 }
 </style>

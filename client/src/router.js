@@ -16,8 +16,8 @@ const router = new Router({
     {
       path: '/lesson',
       name: 'lesson',
-      component: Lessons,
-      params: true
+      component: Lesson,
+      props: true
     },
   ]
 })

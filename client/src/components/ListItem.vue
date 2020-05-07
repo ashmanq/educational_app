@@ -1,5 +1,5 @@
 <template lang="html">
-  <div v-on:click="openLessonPage()" class="lesson">
+  <div class="lesson">
     <router-link :to="{ name: 'lesson', params: {lesson} }">
       <h3>{{ lesson.name }}</h3>
       <img v-bind:src="lesson.image" width="350">
@@ -25,7 +25,13 @@ export default {
 .lesson {
   display: flex;
   flex-direction: column;
-  background-color: #f5ce42
+  background-color: #f5ce42;
+  margin: 35px;
+  color: #2c3e50;
+}
+
+a {
+  color: #2c3e50;
 }
 
 .lesson:hover {
