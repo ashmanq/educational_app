@@ -25,8 +25,8 @@ export default {
 
 img {
   border-radius: 5px;
-  width:37%;
-  height:37%;
+  width:30%;
+  height:30%;
 }
 .container {
   margin: 20px;
@@ -35,7 +35,7 @@ img {
   display: flex;
   flex-direction: column;
   /* padding:0px 40px; */
-  width:40%;
+  width:60%;
   color: white;
 }
 </style>

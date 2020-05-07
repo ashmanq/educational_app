@@ -48,7 +48,7 @@ body {
   flex-direction: row;
   justify-content: center;
   /* margin: auto; */
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
   /* height: 100vh; */
   /* background-size: cover; */
   margin-bottom: 2%;

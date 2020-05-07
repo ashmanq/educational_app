@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container">
-    <lesson-row class="row" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
+    <lesson-row v-if="lesson" class="row" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
   </div>
 </template>
 
