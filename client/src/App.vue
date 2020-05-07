@@ -72,7 +72,7 @@ nav {
 
 h1 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 2.2em;
+  font-size: 4.2em;
 }
 
 a {
