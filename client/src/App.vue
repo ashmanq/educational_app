@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <h1>Education App</h1>
-    <lesson-list :lessons="lessons"></lesson-list>
+    <nav>
+      <h1><router-link :to="{ name: '', params: {} }">Education App</router-link></h1>
+    </nav>
+    <router-view id="view"></router-view>
   </div>
 </template>
 
@@ -12,18 +14,18 @@ import {eventBus} from '@/main.js';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      lessons: []
-    };
-  },
-  mounted() {
-    LessonService.getLessons()
-    .then((lessons) => this.lessons = lessons);
-  },
-  components: {
-    'lesson-list': LessonList
-  }
+  // data() {
+  //   return {
+  //     lessons: []
+  //   };
+  // },
+  // mounted() {
+  //   LessonService.getLessons()
+  //   .then((lessons) => this.lessons = lessons);
+  // },
+  // components: {
+  //   'lesson-list': LessonList
+  // }
 }
 </script>
 
@@ -35,5 +37,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>
