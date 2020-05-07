@@ -8,7 +8,7 @@ import LessonService from '@/services/LessonService.js';
 import {eventBus} from '@/main.js';
 
 export default {
-  
+
 }
 </script>
 
