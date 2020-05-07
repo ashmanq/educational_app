@@ -28,6 +28,7 @@ export default {
   background-color: #f5ce42;
   margin: 35px;
   color: #2c3e50;
+  transition: 0.3s;
 }
 
 a {
@@ -35,7 +36,25 @@ a {
 }
 
 .lesson:hover {
-  background-color: #ba9e3a
+  /* background-color: #ba9e3a; */
+  /* background: rgba(0, 0, 0, 0.1); */
+  border: 1px solid black;
+}
+
+.lesson:hover img {
+  /* opacity: 0.1; */
+  /* background-blend-mode: overlay; */
+}
+
+.lesson:hover {
+  animation: myfirst 0.1s;
+  position: relative;
+  animation-fill-mode: forwards;
+}
+
+@keyframes myfirst {
+  0% {top: 0;}
+  100% {top: 5px;}
 }
 
 
