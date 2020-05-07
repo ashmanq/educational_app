@@ -1,5 +1,5 @@
 use lessons_db;
-db.dropDatabase();
+db.dropDatabase;
 
 db.lessons.insertMany(
   [{
@@ -61,6 +61,46 @@ db.lessons.insertMany(
                 pic: "https://images.unsplash.com/photo-1581093581417-60b6c94a7945?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
             }
         ]
+    },
+    { name: "Solar System",
+      image: "https://cdn.arstechnica.net/wp-content/uploads/2020/03/nasa_386_SunEmitsSolsticeFlare1200w-800x480.jpg",
+      details: [
+    {
+    name: "Mercury",
+    info: "Mercury is the first planet from the sun. It is named after the Roman god Mercury, the messenger of the gods. It is also the smallest planet in the solar system.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/mercury.png"
+    },
+    {
+    name: "Venus",
+    info: "Venus is the second planet from the sun. It was given the name Venus after the goddess of love and beauty. Venus is one of the brightest objects that can be seen from Earth.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/venus.png"
+    },
+    {
+    name: "Earth"
+    info: "Earth is the third planet from the sun. It is the only planet in our solar system not to be named after a Roman God. Earth is a Germanic word which roughly translates to the ground.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/earth.png"
+    },
+    {
+    name: "Mars",
+    info: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the 'Red Planet'. The planet appears red because of the concentration of iron oxide on the surface of the planet.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/mars.png"
+    },
+    {
+    name: "Jupiter",
+    info: "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is named after the Roman god of the sky. The planet has brown and orange coloured zones, due to parts of the cloud reacting with the ultraviolet rays of the sun.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/jupiter.png"
+    },
+    {
+    name: "Saturn",
+    info: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System. Saturn is named after the Roman god of agriculture. It is a pale yellow colour due to ammonia crystals in the atmosphere.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/saturn.png"
+    },
+    {
+    name: "Neptune",
+    info: "Neptune is the furtherest planet from the Sun. It has the most powerful wind speeds of all the planets. It is the only planet that cannot be seen from Earth with the naked eye. It was named after the Roman god of the seas.",
+    pic: "https://nineplanets.org/wp-content/uploads/2019/09/neptune.png"
     }
+    ]
+  },
 ]
 )
