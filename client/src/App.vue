@@ -32,27 +32,33 @@ export default {
 <style>
 
 html {
-  background-image: url("https://images.unsplash.com/photo-1527073880064-c69ce4454d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2151&q=80");
+  background-image: url("https://images.unsplash.com/photo-1501619757722-90657a99803b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   margin: auto;
   background-attachment: fixed;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+
 }
 
 body {
-  margin-top: 2%;
-  width: 100%;
+  /* margin-top: 2%; */
+  /* width: 70.19%; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* margin: auto; */
-  /* background-color: rgba(0, 0, 0, 0.3); */
   /* height: 100vh; */
   /* background-size: cover; */
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
   border-radius: 5px;
+}
+
+nav {
+  /* background-color: white; */
+  margin-top: 0;
 }
 
 #app {

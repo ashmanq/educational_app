@@ -64,7 +64,7 @@ db.lessons.insertMany(
         ]
     },
     { name: "Solar System",
-      image: "https://images.unsplash.com/photo-1529788295308-1eace6f67388?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
       details: [
     {
     name: "Mercury",
