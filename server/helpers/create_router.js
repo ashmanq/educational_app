@@ -22,8 +22,8 @@ const createRouter = function(collection) {
     collection
     .findOne({_id: ObjectID(id)
     })
-    .then((doc) => res.json(doc)
-    .catch(err) => {
+    .then((doc) => res.json(doc))
+    .catch((err) => {
       console.error(err);
       res.status(500);
       res.json({ status: 500, error: err });
@@ -43,14 +43,14 @@ const createRouter = function(collection) {
   const id = req.params.id;
   collection
   .deleteOne({_id: ObjectID(id)})
-  .then(result => { res.json(result))
+  .then(result => { res.json(result)
 })
 .catch((err) => {
   console.error(err);
   res.status(500);
   res.json({ status: 500, error: err });
 });
-
+});
   return router;
 
 };

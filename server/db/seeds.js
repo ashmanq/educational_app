@@ -5,7 +5,8 @@ db.lessons.insertMany(
   [{
         name: "Arctic Animals",
         image: "https://images.unsplash.com/photo-1517783999520-f068d7431a60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-        details: [{
+        details: [
+          {
                 name: "Polar Bear",
                 text: "Polar bears roam the Arctic ice sheets and swim in that region's coastal waters. They are very strong swimmers, and their large front paws, which they use to paddle, are slightly webbed. Some polar bears have been seen swimming hundreds of miles from land—though they probably cover most of that distance by floating on sheets of ice.",
                 pic: "https://images.unsplash.com/photo-1553425300-8bd56360f8eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1739&q=80"
@@ -76,7 +77,7 @@ db.lessons.insertMany(
     pic: "https://nineplanets.org/wp-content/uploads/2019/09/venus.png"
     },
     {
-    name: "Earth"
+    name: "Earth",
     info: "Earth is the third planet from the sun. It is the only planet in our solar system not to be named after a Roman God. Earth is a Germanic word which roughly translates to the ground.",
     pic: "https://nineplanets.org/wp-content/uploads/2019/09/earth.png"
     },
