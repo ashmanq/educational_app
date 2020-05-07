@@ -1,8 +1,9 @@
 <template lang="html">
   <div class="">
     <p>{{question.question}}</p>
-    <p v-if="question" class="answers" v-for="answer in question.answers">{{answer}}</p>
+    <p v-if="question" v-on:click="selectAnswer(answer)" class="answers" v-for="answer in question.answers" :class="">{{answer}}</p>
     <p>{{userAnswers}}</p>
+    <button v-on:click="checkAnswer" type="submit" name="button">Check Your Answers</button>
   </div>
 </template>
 
@@ -15,13 +16,23 @@ export default {
   props: ['question'],
   data() {
     return {
-      userAnswers: 0
+      userAnswers: 0,
+      selectedAnswer: null
     }
   },
-  method: {
+  methods: {
+      selectAnswer(answer) {
+        this.selectedAnswer = answer;
+      },
+      checkAnswer() {
+        console.log();
+        if (this.question.correct === this.selectedAnswer) {
+          this.userAnswers += 1;
+        }
+        }
+      }
     }
-  }
-}
+
 </script>
 
 <style lang="css" scoped>
