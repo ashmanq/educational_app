@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <h1>Education App</h1>
+      <h1><router-link :to="{ name: 'home'}">Education App</router-link></h1>
     </nav>
     <router-view id="view"></router-view>
   </div>
@@ -30,6 +30,11 @@ export default {
 </script>
 
 <style>
+
+html {
+  background-image: ;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
