@@ -25,7 +25,13 @@ export default {
 .lesson {
   display: flex;
   flex-direction: column;
-  background-color: #f5ce42
+  background-color: #f5ce42;
+  margin: 35px;
+  color: #2c3e50;
+}
+
+a {
+  color: #2c3e50;
 }
 
 .lesson:hover {

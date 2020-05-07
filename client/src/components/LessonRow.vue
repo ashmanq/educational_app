@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="item">
     <img v-bind:src="lessonRow.pic" v-bind:alt="lessonRow.name">
       <div class="column">
         <h3>{{ lessonRow.name }}</h3>
@@ -16,9 +16,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 img {
-  border-radius: 20px;
-  width:400px;
+  border-radius: 5px;
+  width:35%;
+  height:35%;
 }
 .container {
   margin: 20px;
@@ -28,5 +36,6 @@ img {
   flex-direction: column;
   /* padding:0px 40px; */
   width:40%;
+  color: white;
 }
 </style>
