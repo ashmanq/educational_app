@@ -19,5 +19,7 @@ export default {
     return fetch(baseURL + id, {
       method: 'DELETE'
     })
-  }
+  },
+
+  
 }
