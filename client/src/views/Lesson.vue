@@ -3,7 +3,7 @@
     <lesson-row v-if="lesson" class="row" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
     <!-- <button type="button" name="button">Play Game</button>
    -->
-   <h1><router-link :to="{ name: 'game', params: {lesson} }">Test Your Knowledge</router-link></h1>
+   <h1><router-link :to="{ name: 'game', params: {questions} }">Test Your Knowledge</router-link></h1>
   </div>
 </template>
 
@@ -13,6 +13,11 @@ import {eventBus} from '@/main.js';
 
 export default {
   props: ['lesson'],
+  data() {
+    return {
+      questions: this.lesson.questions
+    }
+  },
   components: {
     'lesson-row': LessonRow
   }
