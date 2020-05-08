@@ -2,6 +2,7 @@
   <div id="app">
     <nav>
       <h1><router-link :to="{ name: 'home'}">DISCOVERY WORLD</router-link></h1>
+      <h5><<router-link :to="{ name: 'addLesson' }">Add/Edit Lesson</router-link></h5>
     </nav>
     <router-view id="view"></router-view>
   </div>
