@@ -1,4 +1,5 @@
 use lessons_db;
+
 db.dropDatabase();
 
 db.lessons.insertMany(
@@ -125,8 +126,8 @@ db.lessons.insertMany(
           answers: ["Main", "Maine", "Mane", "Man"],
           correct: "Mane"
         }
-        ]
-      }
+      ]
+    },
     {
         name: "Human Body",
         image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80",
@@ -266,9 +267,10 @@ db.lessons.insertMany(
     },
     {
       question: "Which planet is a pale yellow colour?",
-      answers: ["Venus, "Mars", "Earth", "Saturn"],
+      answers: ["Venus", "Mars", "Earth", "Saturn"],
       correct: "Saturn"
     }
-  },
-]
+    ]
+    }
+  ]
 )
