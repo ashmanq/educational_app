@@ -3,6 +3,9 @@
     <p>{{question.question}}</p>
     <p v-if="question" v-on:click="selectAnswer(answer)" class="answers" v-for="answer in question.answers" :class="">{{answer}}</p>
     <p>{{userAnswers}}</p>
+
+    <input type="radio" name="selectedAnswer" v-on:click="selectAnswer(answer)" v-for="answer in question.answers" :value="answer" v-model="selectedAnswer">
+
     <button v-on:click="checkAnswer" type="submit" name="button">Check Your Answers</button>
   </div>
 </template>
