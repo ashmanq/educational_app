@@ -1,8 +1,10 @@
 <template lang="html">
   <div class="flashcard">
-    <flashcards v-if="questions" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
+    <flashcards v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
 
-    <button v-on:click="checkAnswer" type="submit" name="button">Check Your Answers</button>
+    <button v-if="!showResults"v-on:click="checkAnswer" type="submit" name="button">Check Your Answers</button>
+
+    <results-view v-if="showResults" :questions="questions" :answers="answers"></results-view>
   </div>
 
 </template>
@@ -10,16 +12,19 @@
 <script>
 import {eventBus} from '@/main.js'
 import Flashcards from '@/components/Flashcards.vue';
+import Results from '@/components/Results.vue'
 
 export default {
   props: ['questions'],
   data() {
     return {
-      answers: Array(this.questions.length).fill('')
+      answers: Array(this.questions.length).fill(''),
+      showResults: false,
     }
   },
   components: {
-    'flashcards': Flashcards
+    'flashcards': Flashcards,
+    'results-view': Results
   },
   methods: {
     checkAnswer() {
@@ -30,7 +35,7 @@ export default {
         }
       })
       console.log(count);
-
+      this.showResults = true;
     }
   },
   mounted() {
@@ -48,5 +53,7 @@ export default {
 <style lang="css" scoped>
   .flashcard {
     color: white;
+    width:100%;
+    background-color: red;
   }
 </style>
