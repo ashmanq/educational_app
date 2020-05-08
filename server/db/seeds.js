@@ -139,7 +139,7 @@ db.lessons.insertMany(
             {
                 name: "Teeth",
                 text: "A person has two sets of teeth throughut their lifetimes, baby teeth and adult teeth. Teeth are also unique - any two people will have their own identical teeth! There are 20 teeth in a person's first set of teeth, increasing to 32 for a person's set of adult teeth. There are four seperate types of teeth.",
-                pic: "https://img.favpng.com/3/25/25/tooth-mouth-cartoon-dentistry-png-favpng-h3Qkcg34cgRyBLhmEZ7TLmPQE.jpg"
+                pic: "https://images.unsplash.com/photo-1530213709681-b7e537c923cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
             },
             {
                 name: "Hair",
