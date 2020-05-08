@@ -26,42 +26,42 @@ db.lessons.insertMany(
           {
             question: "What is the average height of a penguin?",
             answers: ["45 Inches", "45cm", "20 Inches", "4 Inches"],
-            correctAnswer: "45 Inches"
+            correct: "45 Inches"
           },
           {
             question: "What part of the body do polar bears use to help them swim?",
             answers: ["Front Paws", "Ears", "Fur", "Tail"],
-            correctAnswer: "Front Paws"
+            correct: "Front Paws"
           },
           {
             question: "Which one of these body parts would not help a polar bear survive in low artic temperatures?",
             answers: ["Short Ears", "Muzzle", "Dark Eyes", "Thick Fur"],
-            correctAnswer: "Dark Eyes"
+            correct: "Dark Eyes"
           },
           {
             question: "Where do arctic foxes usually live?",
             answers: ["Travelodge", "Burrow", "Tree", "Igloo"],
-            correctAnswer: "Burrow"
+            correct: "Burrow"
           },
           {
             question: "How do emperor penguins cope with the cold Arctic climate?",
             answers: ["Central Heating", "Nests", "Huddling", "Blankets"],
-            correctAnswer: "Huddling"
+            correct: "Huddling"
           },
           {
             question: "How many emporer penguins are there in the wild?",
             answers: ["100", "30,000", "600,000", "850,00"],
-            correctAnswer: "600,000"
+            correct: "600,000"
           },
           {
             question: "An arctic fox uses it's tail to protect it from what?",
             answers: ["Other Foxes", "Cold", "Birds", "Polar Bears"],
-            correctAnswer: "Cold"
+            correct: "Cold"
           },
           {
             question: "What sense helps a polar bear hunt it's main food source, seals?",
             answers: ["Taste", "Hearing", "Smell", "Touch"],
-            correctAnswer: "Smell"
+            correct: "Smell"
           }
         ]
     },
@@ -88,42 +88,42 @@ db.lessons.insertMany(
           {
             question: "What type of lion usually has a mane?",
             answers: ["Pregnant Females", "Males", "Elderly", "Virtual"],
-            correctAnswer: "Males"
+            correct: "Males"
           },
           {
             question: "A zebra's ____ are usually unique.",
             answers: ["Fingerprints", "Stripes", "Names", "Tails"],
-            correctAnswer: "Stripes"
+            correct: "Stripes"
           },
           {
             question: "From how far away can you hear a lion's roar?",
             answers: ["10 Miles", "10 Meters", "5 Miles", "500 Miles"],
-            correctAnswer: "5 Miles"
+            correct: "5 Miles"
           },
           {
             question: "How much does an elephant usually weigh at birth?",
             answers: ["20 Pounds", "200 Pounds", "10 Pounds", "65 Pounds"],
-            correctAnswer: "200 Pounds"
+            correct: "200 Pounds"
           },
           {
             question: "In the wild, which elephant usually leads the group of elephants?",
             answers: ["Oldest Female", "Strongest Male", "Youngest Female", "Oldest Male"],
-            correctAnswer: "Oldest Female"
+            correct: "Oldest Female"
           },
           {
             question: "How tall are elephants?",
             answers: ["2 Feet", "3 Feet", "12 Feet", "5 Feet"],
-            correctAnswer: "3 Feet"
+            correct: "3 Feet"
           },
           {
            question: "Which big cat is typically biger than a typical lion?",
            answers: ["Tiger", "Dog", "Domestic Cat", "Lepoard"],
-           correctAnswer: "Tiger"
+           correct: "Tiger"
           },
           {
           question: "What is the puff of hair around a lion's head called?",
           answers: ["Main", "Maine", "Mane", "Man"],
-          correctAnswer: "Mane"
+          correct: "Mane"
         }
         ]
       }
@@ -150,17 +150,17 @@ db.lessons.insertMany(
           {
             question: "How many teeth are in a set of human baby teeth?",
             answers: ["2", "20", "10", "7"],
-            correctAnswer: "20"
+            correct: "20"
           },
           {
             question: "How many hairs does a typical human have on their head?",
             answers: ["100", "250,000", "100,000", "10"],
-            correctAnswer: "250,000"
+            correct: "250,000"
           },
           {
             question: "How many different types of teeth do humans have?",
             answers: ["4", "2", "10", "8"],
-            correctAnswer: "10"
+            correct: "10"
           },
           {
             question: "How many times do we blink in a day?",
