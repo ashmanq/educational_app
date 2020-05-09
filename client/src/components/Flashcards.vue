@@ -1,14 +1,15 @@
 <template lang="html">
-  <div class="">
-    <p>{{question.question}}</p>
+  <div class="box">
     <!-- <p v-if="question" v-on:click="selectAnswer(answer)" class="answers" v-for="answer in question.answers" :class="">{{answer}}</p> -->
     <!-- <p>{{userAnswers}}</p> -->
 
     <!-- <input type="radio" name="selectedAnswer" v-on:click="selectAnswer(answer)" v-for="answer in question.answers" :value="answer" v-model="selectedAnswer"> -->
+    <p>{{question.question}}</p>
 
-    <answer v-for="(answer, index) in question.answers" :answer="answer" :key="index" :indexValue="keyValue"></answer>
+    <div class="row">
 
-
+      <answer v-for="(answer, index) in question.answers" :answer="answer" :key="index" :indexValue="keyValue"></answer>
+    </div>
 
   </div>
 </template>
@@ -54,6 +55,28 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0px;
+  }
+
+  .box {
+    border: 1px solid white;
+    margin: 50px;
+    /* padding: 0px; */
+    font-size: 1.3em;
+    
+  }
+
+  p {
+    margin: 50px;
+    margin-top: 70px;
+  }
+
   .answers {
     border: 1px solid black;
   }
