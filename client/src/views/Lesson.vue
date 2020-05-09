@@ -1,9 +1,15 @@
 <template lang="html">
   <div class="container">
-    <lesson-row v-if="lesson" class="row" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
-    <!-- <button type="button" name="button">Play Game</button>
-   -->
-   <h1><router-link :to="{ name: 'game', params: {questions} }">Test Your Knowledge</router-link></h1>
+    <lesson-row v-bind:class="checkPage(index)" v-if="lesson" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
+
+    <div class="pages">
+      <button v-if="pageNo > 0" v-on:click="changePage('prev')" type="button" name="prevPage">Previous</button>
+      <!-- <h2 class="page-no">{{ pageNo + 1 }}</h2> -->
+      <button v-if="pageNo < details.length - 1" v-on:click="changePage('next')" type="button" name="nextPage">Next</button>
+    <router-link :to="{ name: 'game', params: {questions} }">
+      <button v-if="(pageNo === details.length - 1)" type="submit" name="button">Test Your Knowledge</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -15,7 +21,27 @@ export default {
   props: ['lesson'],
   data() {
     return {
-      questions: this.lesson.questions
+      questions: this.lesson.questions,
+      details: this.lesson.details,
+      pageNo: 0,
+    }
+  },
+  methods: {
+    checkPage(index) {
+      if(index == this.pageNo) {
+        return "row";
+      } else {
+        return "hidden";
+      }
+    },
+
+    changePage(changeType) {
+      if(changeType==='prev' && this.pageNo != 0) {
+        this.pageNo -= 1;
+      }
+      else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
+        this.pageNo += 1;
+      }
     }
   },
   components: {
@@ -26,6 +52,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.show {
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -33,11 +67,10 @@ export default {
   border-radius: 10px;
 }
 
-
 .row {
   display: flex;
   flex-wrap: nowrap;
-  margin: 20px;
+  margin: 50px;
   justify-content: space-around;
 
 }
@@ -46,27 +79,26 @@ export default {
   flex-direction:row-reverse;
 }
 
-button {
+.pages {
   display: flex;
-  flex-direction: row;
-  align-self: center;
-  padding: 25px;
-  width: 200px;
   justify-content: center;
-  margin-bottom: 35px;
-  margin-top: 10px;
-  font-size: 2em;
-  border-radius: 50%;
-  background-color: rgba(256, 256, 256, 0.5);
 }
 
-a {
-  font-size: 0.6em;
-  margin-bottom: 20px;
+button {
+  display: inline-block;
+    background-color: #f5ce42;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    width: 250px;
+    /* text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; */
+    color: black;
+    /* margin-bottom: 50px; */
+    margin: 15px 50px;
+    transition: 0.1s;
 }
 
-a:hover {
-  /* text-shadow: 1px 1px grey, -1px -1px grey; */
-  color: white;
-}
+
 </style>
