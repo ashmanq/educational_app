@@ -44,18 +44,7 @@ html {
 
 }
 
-body {
-  /* margin-top: 2%; */
-  /* width: 70.19%; */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* margin: auto; */
-  /* height: 100vh; */
-  /* background-size: cover; */
-  /* margin-bottom: 2%; */
-  border-radius: 5px;
-}
+
 
 nav {
   /* background-color: white; */

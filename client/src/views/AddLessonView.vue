@@ -33,6 +33,15 @@ export default {
 
     eventBus.$on('post-lesson', newLesson => { LessonService.addLesson(newLesson)
     .then(lesson => this.lessons.push(lesson))
+
+    eventBus.$on('lesson-updated', lesson => {
+      const updatedLesson = {
+        ...lesson,
+      }
+      LessonService.updateLesson(updatedLesson);
+      const index = this.lessons.details.findIndex(lesson => lesson._id === updatedLesson._id);
+      this.lessons.details.splice(index, 1, updatedLesson)
+    })
   })
 },
   components: {
