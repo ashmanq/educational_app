@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="item">
-        <img v-bind:src="lessonRow.pic" v-bind:alt="lessonRow.name">
+      <img v-bind:src="lessonRow.pic" v-bind:alt="lessonRow.name">
         <div class="column">
           <h2>{{ lessonRow.name }}</h2>
           <p>{{ lessonRow.text }}</p>
@@ -19,6 +19,7 @@ export default {
 h2 {
   font-size: 2em;
 }
+
 .item {
   display: flex;
   flex-direction: row;
@@ -30,13 +31,14 @@ img {
   width:30%;
   height:300px;
 }
+
 .container {
   margin: 20px;
 }
+
 .column {
   display: flex;
   flex-direction: column;
-  /* padding:0px 40px; */
   width:60%;
   color: white;
 }

@@ -13,7 +13,8 @@
     </div>
 
     <h2> You got {{ count }} out of {{ questions.length }} correct.</h2>
-    <h1><router-link :to="{ name: 'home' }">Back to Home Page</router-link></h1>
+
+    <button type="button" name="button"><router-link :to="{ name: 'home' }">Back to Home Page</router-link></button>
   </div>
 </template>
 
@@ -39,26 +40,44 @@ export default {
 </script>
 
 <style lang="css" scoped>
-h3 {
-  font-size: 2em;
-}
-.winner {
-  height: 200px;
-  width: 200px;
-}
 
-.sadface {
-  height: 150px;
-  width: 150px;
-}
+  h3 {
+    font-size: 2em;
+  }
+  .winner {
+    height: 200px;
+    width: 200px;
+  }
 
-a {
-  font-size: 0.6em;
-  margin-bottom: 20px;
-}
+  .sadface {
+    height: 150px;
+    width: 150px;
+  }
 
-a:hover {
-  /* text-shadow: 1px 1px grey, -1px -1px grey; */
-  color: white;
-}
+  a {
+    margin-bottom: 20px;
+    color: #2C3E50;
+    transition: 0.2s;
+  }
+
+  button {
+    display: inline-block;
+    background-color: #f5ce42;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    width: 250px;
+    color: #2C3E50;
+    margin: 15px 50px;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background-color: white;
+    border-color: orange;
+    cursor: pointer;
+  }
+
 </style>

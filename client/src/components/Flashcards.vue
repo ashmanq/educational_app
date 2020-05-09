@@ -1,12 +1,9 @@
 <template lang="html">
   <div class="box">
     <p>{{question.question}}</p>
-
-    <div class="row">
-
-      <answer v-for="(answer, index) in question.answers" :answer="answer" :key="index" :indexValue="keyValue"></answer>
-    </div>
-
+      <div class="row">
+        <answer v-for="(answer, index) in question.answers" :answer="answer" :key="index" :indexValue="keyValue"></answer>
+      </div>
   </div>
 </template>
 
@@ -47,9 +44,7 @@ export default {
   .box {
     border: 1px solid white;
     margin: 50px;
-    /* padding: 0px; */
     font-size: 1.3em;
-
   }
 
   p {
