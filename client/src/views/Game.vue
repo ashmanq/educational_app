@@ -1,8 +1,17 @@
 <template lang="html">
   <div class="flashcard">
+    <h1> Quiz </h1>
+    <h2> Question {{ pageNo + 1 }} of {{ questions.length }}</h2>
+    <h2 v-bind:class="message">Please select an answer.</h2>
     <flashcards v-bind:class="checkPage(index)" v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
 
-    <button v-if="!showResults"v-on:click="checkAnswer" type="submit" name="button">Check Your Answers</button>
+    <div v-if="!showResults" class="pages">
+      <button v-if="pageNo > 0" v-on:click="changePage('prev')" type="button" name="prevPage">Previous</button>
+      <!-- <h2 class="page-no">{{ pageNo + 1 }}</h2> -->
+      <button v-if="pageNo < questions.length - 1" v-on:click="changePage('next')" type="button" name="nextPage">Next</button>
+      <button v-if="(!showResults && (pageNo === questions.length - 1)) "v-on:click="checkAnswer" type="submit" name="button">Submit Your Answers</button>
+    </div>
+
 
     <results-view v-if="showResults" :questions="questions" :answers="answers"></results-view>
   </div>
@@ -21,6 +30,7 @@ export default {
       answers: Array(this.questions.length).fill(''),
       showResults: false,
       pageNo: 0,
+      message: "hideMessage",
     }
   },
   components: {
@@ -42,7 +52,22 @@ export default {
       if(index == this.pageNo) {
         return "show";
       } else {
-        return "hide";
+        return "hidden";
+      }
+    },
+
+    changePage(changeType) {
+      if (this.answers[this.pageNo] !== '')
+      {
+        if(changeType==='prev' && this.pageNo != 0) {
+          this.pageNo -= 1;
+        }
+        else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
+          this.pageNo += 1;
+        }
+        this.message = "hideMessage";
+      } else {
+        this.message = ""
       }
     }
   },
@@ -62,6 +87,10 @@ export default {
   h1 {
     color: white;
   }
+
+  .page-no {
+    margin: 0px 50px;
+  }
   .flashcard {
     color: white;
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -75,6 +104,19 @@ export default {
     background-color: rgba(0, 0, 0, 0.7);
   }
 
+  .show {
+    visibility: visible;
+  }
+  .hideMessage {
+    visibility: hidden;
+  }
+  .hidden {
+    display: none;
+  }
+  .pages {
+    display: flex;
+    justify-content: center;
+  }
   button {
     display: inline-block;
     background-color: #f5ce42;
@@ -86,7 +128,8 @@ export default {
     width: 250px;
     /* text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; */
     color: black;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    margin: 15px 50px;
     transition: 0.1s;
   }
 
