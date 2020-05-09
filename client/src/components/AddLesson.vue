@@ -19,9 +19,11 @@
 </form>
 
 <label for="selectLesson"></label>
-<select id="selectedLesson">
+<select id="selectedLesson" v-model="selectedLesson">
 
   <option v-for="(lesson, index) in lessons" :lessons="lessons" :key="index">{{lesson.name}}</option>
+
+  <h3 v-if="selectedLesson" :selectedLesson="selectedLesson">Test.</h3>
 
 </select>
 
@@ -42,7 +44,8 @@ export default {
   data(){
     return {
       name: "",
-      image: ""
+      image: "",
+      selectedLesson: null
     }
   },
   methods: {

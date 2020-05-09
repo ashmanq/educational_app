@@ -11,8 +11,7 @@ import LessonService from '@/services/LessonService.js'
 export default {
   data() {
     return {
-      lessons: [],
-      selectLesson: null
+      lessons: []
     };
   },
   props:
