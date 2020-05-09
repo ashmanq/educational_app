@@ -6,6 +6,7 @@ db.lessons.insertMany(
   [{
         name: "Arctic Animals",
         image: "https://images.unsplash.com/photo-1517783999520-f068d7431a60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+        lesson_complete: "false",
         details: [
           {
                 name: "Polar Bear",
@@ -69,6 +70,7 @@ db.lessons.insertMany(
     {
           name: "Savannah Animals",
           image: "https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+          lesson_complete: "false",
           details: [{
                   name: "Elephant",
                   text: "Elephants are matriarchal, meaning they live in female-led groups. The matriarch is usually the biggest and oldest. She presides over a multi-generational herd that includes other females, called cows, and their young. Adult males, called bulls, tend to roam on their own, sometimes forming smaller, more loosely associated all-male groups. Having a baby elephant is a serious commitment. Elephants have a longer pregnancy than any other mammal—almost 22 months. Cows usually give birth to one calf every two to four years. At birth, elephants already weigh some 200 pounds and stand about three feet tall.",
@@ -131,6 +133,7 @@ db.lessons.insertMany(
     {
         name: "Human Body",
         image: "https://images.unsplash.com/photo-1508387027939-27cccde53673?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80",
+        lesson_complete: "false",
         details: [{
                 name: "Eye",
                 text: "You blink more than 10,000 times a day. Your eyelid is used to protect your eye. It takes less than half a second for a blink to be completed. Your pupils (the dark circle in your eye) get bigger in brighter light - this is to allow them to let the correct level of light into your eye as is this important to allowing you to see properly.",
@@ -192,6 +195,7 @@ db.lessons.insertMany(
     },
     { name: "Solar System",
       image: "https://images.unsplash.com/photo-1485832329521-e944d75fa65e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+      lesson_complete: "false",
       details: [
     {
     name: "Mercury",
