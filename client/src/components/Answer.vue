@@ -63,5 +63,6 @@ export default {
 
   .radio-toolbar label:hover {
     background-color: white;
+    cursor: pointer;
   }
 </style>

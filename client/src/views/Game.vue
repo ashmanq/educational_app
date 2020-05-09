@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="flashcard">
     <h1> Quiz </h1>
-    <h2> Question {{ pageNo + 1 }} of {{ questions.length }}</h2>
+    <h2 v-if="!showResults"> Question {{ pageNo + 1 }} of {{ questions.length }}</h2>
     <h2 v-bind:class="message">Please select an answer.</h2>
     <flashcards v-bind:class="checkPage(index)" v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
 
@@ -93,7 +93,9 @@ export default {
   }
   .flashcard {
     color: white;
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 97.8vw;
+    border-radius: 10px;
   }
 
   .game {
