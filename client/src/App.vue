@@ -68,6 +68,7 @@ nav {
   text-align: center;
   color: #2c3e50;
   /* margin-top: 60px; */
+  cursor: url('~@/assets/hand.png');
 }
 
 h1 {

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container">
-    <lesson-row  v-bind:class="checkPage(index)" v-if="lesson" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
+    <lesson-row v-bind:class="checkPage(index)" v-if="lesson" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
 
     <div class="pages">
       <button v-if="pageNo > 0" v-on:click="changePage('prev')" type="button" name="prevPage">Previous</button>
@@ -70,7 +70,7 @@ export default {
 .row {
   display: flex;
   flex-wrap: nowrap;
-  margin: 20px;
+  margin: 50px;
   justify-content: space-around;
 
 }
