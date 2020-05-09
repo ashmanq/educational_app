@@ -73,11 +73,8 @@ export default {
   },
   mounted() {
     eventBus.$on(`selected-answer`, (answer) => {
-      // this.answers.push(answer)
-
       const index = answer.answerIndex
       this.answers.splice(index, 1, answer.value)
-      // console.log("hello");
     })
   }
 }
