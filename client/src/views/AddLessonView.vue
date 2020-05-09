@@ -14,8 +14,18 @@ export default {
       lessons: []
     };
   },
-  props:
-    ['lesson'],
+  props: ['lesson'],
+    methods: {
+    handleSubmit() {
+      const newLesson = {
+        name: this.name,
+        image: this.image
+      }
+      eventBus.$emit('post-lesson', newLesson);
+      this.name = ""
+      this.image = "";
+    }
+  },
 
   mounted() {
     LessonService.getLessons()
@@ -25,9 +35,9 @@ export default {
     .then(lesson => this.lessons.push(lesson))
   })
 },
-    components: {
-      'add-lesson': AddLesson
-    }
+  components: {
+   'add-lesson': AddLesson
+ }
 }
 
 </script>

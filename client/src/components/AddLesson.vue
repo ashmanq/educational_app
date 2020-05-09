@@ -19,21 +19,20 @@
 </form>
 
 <label for="selectLesson"></label>
-<select id="selectedLesson" v-model="selectedLesson">
+<select v-model="selectedLesson">
 
-  <option v-for="(lesson, index) in lessons" :lessons="lessons" :key="index">{{lesson.name}}</option>
-
-  <h3 v-if="selectedLesson" :selectedLesson="selectedLesson">Test.</h3>
+  <option v-for="(lesson, index) in lessons" :lessons="lessons" :key="index" :value="lesson">{{lesson.name}}</option>
 
 </select>
 
-
+<lesson-detail :selectedLesson="selectedLesson"></lesson-detail>
 
 </div>
 </template>
 
 <script>
 
+import LessonDetail from '@/components/LessonDetail.vue'
 import LessonService from '@/services/LessonService.js'
 
 import { eventBus } from '@/main.js'
@@ -41,13 +40,13 @@ import { eventBus } from '@/main.js'
 export default {
   name: "add-lesson",
   props: ["lessons"],
-  data(){
+  data() {
     return {
-      name: "",
-      image: "",
-      selectedLesson: null
-    }
-  },
+    selectedLesson: null,
+    name: null,
+    image: null
+  }
+},
   methods: {
   handleSubmit() {
     const newLesson = {
@@ -58,9 +57,11 @@ export default {
     this.name =
     this.image = "";
   }
-}
+},
+components: {
+  'lesson-detail': LessonDetail
  }
-
+}
 
 </script>
 
