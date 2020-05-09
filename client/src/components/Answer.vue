@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="radio-toolbar">
-    <input type="radio" v-bind:id="answer" :name="indexValue" v-bind:value="answer"/>
-    <label v-on:click="handleClick" v-bind:for="answer">{{answer}}</label>
+    <input type="radio" :id="answerId" :name="indexValue" v-bind:value="answer"/>
+    <label v-on:click="handleClick" :for="answerId">{{answer}}</label>
   </div>
 </template>
 
@@ -11,8 +11,13 @@ import {eventBus} from '@/main.js'
 export default {
   name: 'answer-select',
   props: ['answer', 'indexValue'],
+  data() {
+    return {
+      answerId: this.answer.replace(/\s+/g, '-').toLowerCase() + this.indexValue,
+    }
+  },
   methods: {
-    handleClick: function() {
+    handleClick() {
       const selectedAnswer = {
         value: this.answer,
         answerIndex: this.indexValue

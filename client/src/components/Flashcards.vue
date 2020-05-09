@@ -1,9 +1,5 @@
 <template lang="html">
   <div class="box">
-    <!-- <p v-if="question" v-on:click="selectAnswer(answer)" class="answers" v-for="answer in question.answers" :class="">{{answer}}</p> -->
-    <!-- <p>{{userAnswers}}</p> -->
-
-    <!-- <input type="radio" name="selectedAnswer" v-on:click="selectAnswer(answer)" v-for="answer in question.answers" :value="answer" v-model="selectedAnswer"> -->
     <p>{{question.question}}</p>
 
     <div class="row">
@@ -15,7 +11,6 @@
 </template>
 
 <script>
-// import LessonList from '@/components/LessonList.vue'
 import {eventBus} from '@/main.js'
 import Answer from '@/components/Answer.vue'
 
@@ -30,23 +25,8 @@ export default {
     }
   },
   methods: {
-      selectAnswer(answer) {
-        this.selectedAnswer = answer;
-        console.log('hello');
+
       },
-      checkAnswer() {
-        console.log();
-        if (this.question.correct === this.selectedAnswer) {
-          this.userAnswers += 1;
-          }
-        }
-      },
-  // mounted() {
-  //   eventBus.$on(`selected-answer-${this.keyValue}`, (answerValue) => {
-  //     this.selectedAnswer = answerValue.value
-  //     console.log("hello");
-  //   })
-  // },
   components: {
     'answer': Answer
   }
@@ -69,7 +49,7 @@ export default {
     margin: 50px;
     /* padding: 0px; */
     font-size: 1.3em;
-    
+
   }
 
   p {
