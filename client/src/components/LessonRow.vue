@@ -16,7 +16,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
+h2 {
+  font-size: 2em;
+}
 .item {
   display: flex;
   flex-direction: row;
