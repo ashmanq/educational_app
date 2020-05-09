@@ -58,11 +58,8 @@ nav {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-<<<<<<< HEAD
   /* margin-top: 60px; */
   cursor: url('~@/assets/hand.png');
-=======
->>>>>>> develop
 }
 
 h1 {
