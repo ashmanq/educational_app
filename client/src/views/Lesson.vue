@@ -6,7 +6,7 @@
       <button v-if="pageNo > 0" v-on:click="changePage('prev')" type="button" name="prevPage">Previous</button>
       <!-- <h2 class="page-no">{{ pageNo + 1 }}</h2> -->
       <button v-if="pageNo < details.length - 1" v-on:click="changePage('next')" type="button" name="nextPage">Next</button>
-      <router-link :to="{ name: 'game', params: {questions} }">
+      <router-link :to="{ name: 'game', params: {lesson} }">
         <button v-if="(pageNo === details.length - 1)" type="submit" name="button">Test Your Knowledge</button>
       </router-link>
     </div>

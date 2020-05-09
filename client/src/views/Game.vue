@@ -9,11 +9,11 @@
         <button v-if="pageNo > 0" v-on:click="changePage('prev')" type="button" name="prevPage">Previous</button>
       <!-- <h2 class="page-no">{{ pageNo + 1 }}</h2> -->
         <button v-if="pageNo < questions.length - 1" v-on:click="changePage('next')" type="button" name="nextPage">Next</button>
-        <button v-if="(!showResults && (pageNo === questions.length - 1)) "v-on:click="checkAnswer" type="submit" name="button">Submit Your Answers</button>
+        <button v-if="(!showResults && (pageNo === questions.length - 1)) "v-on:click="checkAnswers" type="submit" name="button">Submit Your Answers</button>
       </div>
 
 
-    <results-view v-if="showResults" :questions="questions" :answers="answers"></results-view>
+    <results-view v-if="showResults" :lesson="lesson" :answers="answers"></results-view>
   </div>
 
 </template>
@@ -24,10 +24,11 @@ import Flashcards from '@/components/Flashcards.vue';
 import Results from '@/components/Results.vue'
 
 export default {
-  props: ['questions'],
+  props: ['lesson'],
   data() {
     return {
-      answers: Array(this.questions.length).fill(''),
+      questions: this.lesson.questions,
+      answers: Array(this.lesson.questions.length).fill(''),
       showResults: false,
       pageNo: 0,
       message: "hideMessage",
@@ -38,7 +39,7 @@ export default {
     'results-view': Results
   },
   methods: {
-    checkAnswer() {
+    checkAnswers() {
       if (this.answers[this.pageNo] !== '') {
         let count = 0;
         this.answers.forEach((answer, index) => {

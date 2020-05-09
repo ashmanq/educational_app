@@ -19,11 +19,16 @@
 </template>
 
 <script>
+
+import LessonService from '@/services/LessonService.js';
+import {eventBus} from '@/main.js';
+
 export default {
   name: 'results-view',
-  props: ['questions', 'answers'],
+  props: ['lesson', 'answers'],
   data() {
     return {
+      questions: this.lesson.questions,
       count: 0,
     }
   },
@@ -34,7 +39,17 @@ export default {
       if (answer === this.questions[index].correct) {
         this.count += 1;
       }
-    })
+    });
+
+    if(this.count === this.questions.length) {
+      const updatedLesson = {
+        lesson_complete: "true",
+      };
+      LessonService.updateLesson(this.lesson._id, updatedLesson)
+      .then(() => {
+
+      })
+    }
   },
 }
 </script>
