@@ -1,10 +1,10 @@
 <template lang="html">
     <div class="item">
         <img v-bind:src="lessonRow.pic" v-bind:alt="lessonRow.name">
-        <!-- <div class="column">
+        <div class="column">
           <h3>{{ lessonRow.name }}</h3>
           <p>{{ lessonRow.text }}</p>
-        </div> -->
+        </div>
     </div>
 </template>
 
