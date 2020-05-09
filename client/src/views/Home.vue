@@ -11,7 +11,6 @@ import LessonService from '@/services/LessonService.js';
 import {eventBus} from '@/main.js';
 
 export default {
-  // name: 'Home',
   data() {
     return {
       lessons: []
@@ -28,8 +27,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  /* .list {
-    background: rgba(0, 0, 0);
-    width: 50%;
-  } */
+
 </style>

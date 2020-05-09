@@ -27,8 +27,6 @@ export default {
 <style lang="css" scoped>
 
   .radio-toolbar {
-    /* display: flex; */
-    /* flex-direction: row; */
     margin: 0px 10px;
   }
 
@@ -47,19 +45,14 @@ export default {
     border: 2px solid #444;
     border-radius: 4px;
     width: 150px;
-    /* text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; */
-    color: black;
-    transition: 0.1s;
+    color: #2C3E50;
+    transition: 0.2s;
   }
 
   .radio-toolbar input[type="radio"]:checked + label {
     background-color: white;
     border-color: orange;
   }
-
-  /* .radio-toolbar input[type="radio"]:focus + label {
-      border: 2px dashed #444;
-  } */
 
   .radio-toolbar label:hover {
     background-color: white;
