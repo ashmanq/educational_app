@@ -58,10 +58,41 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style>
+  h1 {
+    color: white;
+  }
   .flashcard {
     color: white;
-    width:100%;
-    background-color: red;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+  }
+
+  .game {
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  button {
+    display: inline-block;
+    background-color: #f5ce42;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    width: 250px;
+    /* text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; */
+    color: black;
+    margin-bottom: 50px;
+    transition: 0.1s;
+  }
+
+  button:hover {
+    background-color: white;
+    border-color: orange;
+    cursor: pointer;
   }
 </style>
