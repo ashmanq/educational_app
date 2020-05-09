@@ -39,25 +39,16 @@ html {
   justify-content: center;
   margin: auto;
   background-attachment: fixed;
-  /* background-color: rgba(0, 0, 0, 0.8); */
-
 }
 
 body {
-  /* margin-top: 2%; */
-  /* width: 70.19%; */
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* margin: auto; */
-  /* height: 100vh; */
-  /* background-size: cover; */
-  /* margin-bottom: 2%; */
   border-radius: 5px;
 }
 
 nav {
-  /* background-color: white; */
   margin-top: 0;
 }
 
@@ -67,8 +58,11 @@ nav {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+<<<<<<< HEAD
   /* margin-top: 60px; */
   cursor: url('~@/assets/hand.png');
+=======
+>>>>>>> develop
 }
 
 h1 {
@@ -79,6 +73,6 @@ h1 {
 a {
   text-decoration: none;
   color: #f5ce42;
-
 }
+
 </style>
