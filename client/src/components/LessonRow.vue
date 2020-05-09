@@ -26,7 +26,7 @@ export default {
 img {
   border-radius: 800px;
   width:30%;
-  height:30%;
+  height:300px;
 }
 .container {
   margin: 20px;
