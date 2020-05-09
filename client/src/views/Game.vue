@@ -39,13 +39,19 @@ export default {
   },
   methods: {
     checkAnswer() {
-      let count = 0;
-      this.answers.forEach((answer, index) => {
-        if (answer === this.questions[index].correct) {
-          count += 1;
-        }
-      })
-      this.showResults = true;
+      if (this.answers[this.pageNo] !== '') {
+        let count = 0;
+        this.answers.forEach((answer, index) => {
+          if (answer === this.questions[index].correct) {
+            count += 1;
+          }
+        })
+        this.message = "hideMessage";
+        this.showResults = true;
+      } else {
+        this.message = "";
+      }
+
     },
 
     checkPage(index) {
@@ -57,17 +63,18 @@ export default {
     },
 
     changePage(changeType) {
-      if (this.answers[this.pageNo] !== '')
-      {
-        if(changeType==='prev' && this.pageNo != 0) {
-          this.pageNo -= 1;
+      if(changeType==='prev' && this.pageNo != 0) {
+        this.pageNo -= 1;
+      }
+      else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
+        if (this.answers[this.pageNo] !== '')
+          {
+            this.pageNo += 1;
+            this.message = "hideMessage";
+          }
+        else {
+          this.message = "";
         }
-        else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
-          this.pageNo += 1;
-        }
-        this.message = "hideMessage";
-      } else {
-        this.message = ""
       }
     }
   },

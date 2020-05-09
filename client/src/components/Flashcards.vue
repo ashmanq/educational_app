@@ -22,16 +22,7 @@ export default {
     }
   },
   methods: {
-      selectAnswer(answer) {
-        this.selectedAnswer = answer;
-        console.log('hello');
-      },
-      checkAnswer() {
-        console.log();
-        if (this.question.correct === this.selectedAnswer) {
-          this.userAnswers += 1;
-          }
-        }
+
       },
   components: {
     'answer': Answer
