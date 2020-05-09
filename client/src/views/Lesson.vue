@@ -60,11 +60,13 @@ export default {
 .hidden {
   display: none;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  height: 70vh;
 }
 
 .row {
