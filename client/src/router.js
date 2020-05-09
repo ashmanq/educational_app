@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/views/Home';
 import Lesson from '@/views/Lesson';
-import AddLesson from '@/views/AddLesson'
+import AddLesson from '@/views/AddLessonView'
 
 Vue.use(Router)
 

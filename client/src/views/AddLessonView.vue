@@ -11,17 +11,26 @@ import LessonService from '@/services/LessonService.js'
 export default {
   data() {
     return {
-      lessons: []
+      lessons: [],
+      selectLesson: null
     };
   },
+  props:
+    ['lesson'],
+
   mounted() {
     LessonService.getLessons()
-    .then((lessons) => this.lessons = lessons)
-  },
-  components: {
-    'add-lesson': AddLesson
-  }
+    .then((lessons) => this.lessons = lessons);
+
+    eventBus.$on('post-lesson', newLesson => { LessonService.addLesson(newLesson)
+    .then(lesson => this.lessons.push(lesson))
+  })
+},
+    components: {
+      'add-lesson': AddLesson
+    }
 }
+
 </script>
 
 <style lang="css" scoped>

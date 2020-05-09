@@ -14,7 +14,7 @@ import LessonService from '@/services/LessonService.js';
 import {eventBus} from '@/main.js';
 
 export default {
-  name: 'App',
+  name: 'App'
   // data() {
   //   return {
   //     lessons: []

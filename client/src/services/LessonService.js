@@ -5,11 +5,11 @@ export default {
     return fetch(baseUrl)
     .then(res => res.json());
   },
-  addLesson(payload) {
+  addLesson(newLesson) {
     return fetch(baseUrl, {
       method: 'POST',
-      body: JSON.stringify(payload),
-      headers: {'Content-Type': 'application/json'}
+      body: JSON.stringify(newLesson),
+      headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json());
   },
