@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="flashcard">
-    <flashcards v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
+    <flashcards v-bind:class="checkPage(index)" v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
 
     <button v-if="!showResults"v-on:click="checkAnswer" type="submit" name="button">Check Your Answers</button>
 
@@ -20,6 +20,7 @@ export default {
     return {
       answers: Array(this.questions.length).fill(''),
       showResults: false,
+      pageNo: 0,
     }
   },
   components: {
@@ -34,8 +35,15 @@ export default {
           count += 1;
         }
       })
-      console.log(count);
       this.showResults = true;
+    },
+
+    checkPage(index) {
+      if(index == this.pageNo) {
+        return "show";
+      } else {
+        return "hide";
+      }
     }
   },
   mounted() {
