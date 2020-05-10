@@ -1,5 +1,6 @@
 <template lang="html">
    <div class="lesson-list">
+     <h1>Lessons</h1>
      <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
    </div>
 </template>
@@ -19,6 +20,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 
 .lesson-list {
   display: flex;

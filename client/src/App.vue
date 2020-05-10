@@ -52,6 +52,13 @@ export default {
   h1 {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-size: 4.2em;
+    width:100%;
+  }
+
+  h2 {
+    width:100%;
+    color: white;
+    font-size: 2em;
   }
 
   a {
