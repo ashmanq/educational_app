@@ -2,7 +2,7 @@
 
 <div v-if="selectedLesson">
 
-<div v-for="(detail, index) in selectedLesson.details" :details="details">
+<div v-for="(detail, index) in selectedLesson.details" :detail="detail" :selectedLesson="selectedLesson">
 
 <form id="editLesson" v-on:submit.prevent="handleEdit">
 
@@ -16,7 +16,7 @@
 
 <h3>Detail Text</h3>
 
-<textarea class="lessonText"type="text" v-model="detail.text"></textarea>
+<textarea class="lessonText" v-model="detail.text"></textarea>
 
 <br>
 
@@ -24,7 +24,22 @@
 
 </form>
 
-<div v-if="selectedLesson">
+<question-detail :selectedLesson="selectedLesson"></question-detail>
+
+</div>
+
+<div v-for="(question, index) in selectedLesson.questions" :selectedLesson="selectedLesson">
+
+<label for="question">Question:</label>
+<input v-model="question.question" name="" value="">
+
+<label for="correctAnswer">Correct Answer</label>
+<input v-model="question.correct" value="">
+
+<br>
+
+<question-detail v-for="(answer, index) in question.answers" :answer="answer">
+</question-detail>
 
 </div>
 
@@ -37,15 +52,17 @@
 <script>
 
 import { eventBus } from '@/main.js'
+import QuestionDetail from '@/components/QuestionDetail.vue'
 
 export default {
   name: 'lesson-detail',
-  props: ['selectedLesson', 'details'],
+  props: ['selectedLesson', 'detail', 'question'],
 data() {
   return {
     name: '',
     pic: '',
-    text: ''
+    text: '',
+    answer: ''
   }
 },
 methods: {
@@ -57,6 +74,9 @@ methods: {
   text: this.text
 }
 }
+},
+components: {
+  'question-detail': QuestionDetail
 }
 }
 </script>
@@ -78,7 +98,7 @@ height: 100px;
   height: 60px;
 }
 
-#editLesson {
+div {
   background-color: white;
 }
 

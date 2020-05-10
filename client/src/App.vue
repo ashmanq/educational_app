@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <h1><router-link :to="{ name: 'home'}">DISCOVERY WORLD</router-link></h1>
-      <h5><<router-link :to="{ name: 'addLesson' }">Add/Edit Lesson</router-link></h5>
+      <h5><router-link :to="{ name: 'addLesson' }">Add Lesson</router-link></h5>
     </nav>
     <router-view id="view"></router-view>
   </div>
@@ -14,7 +14,7 @@ import LessonService from '@/services/LessonService.js';
 import {eventBus} from '@/main.js';
 
 export default {
-  name: 'app'
+  name: 'App',
   // data() {
   //   return {
   //     lessons: []
