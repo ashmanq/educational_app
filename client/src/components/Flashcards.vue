@@ -38,7 +38,7 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 40px 0px;
+    margin: 30px 0px;
   }
 
   .box {

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container">
-    <h1>{{ lesson.name }}</h1>
+    <!-- <h1>{{ lesson.name }}</h1> -->
     <lesson-row v-bind:class="checkPage(index)" v-if="lesson" v-for="(lessonRow, index) in lesson.details" :lessonRow="lessonRow" :key="index"></lesson-row>
 
     <div class="pages">
@@ -66,7 +66,7 @@ export default {
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    height: 95vh;
+    height: 70vh;
   }
 
   .row {

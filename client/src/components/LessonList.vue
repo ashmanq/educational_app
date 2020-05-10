@@ -1,10 +1,11 @@
 <template lang="html">
    <div class="lesson-list">
-     <h1>Lessons</h1>
+     <!-- <h1>Lessons</h1> -->
+     <br>
      <div class="meter">
        <span :style="progress "></span>
      </div>
-     <p>Completed: {{completedLessons}}/{{lessons.length}}</p>
+     <p class="">Completed: {{completedLessons}}/{{lessons.length}}</p>
       <div class="lessons">
         <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
       </div>
@@ -51,13 +52,17 @@ export default {
     justify-content: center;
     /* margin: 5px; */
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     flex-direction: column;
   }
 
   p {
     color: white;
+    font-size: 1.3em;
+  }
+
+  .completed {
   }
 
   .lessons {
@@ -70,7 +75,7 @@ export default {
 
   .meter {
   	height: 20px;  /* Can be anything */
-    width: 50vw;
+    width: 500px;
   	position: relative;
   	background: #555;
   	-moz-border-radius: 25px;
@@ -85,8 +90,8 @@ export default {
   .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: rgb(43,194,83);
@@ -105,7 +110,12 @@ export default {
 
   @keyframes move {
    0% { width: 0; }
-   100% { width: 1; }
+   100% { width: 0.5; border-top-right-radius: 20px;
+   border-bottom-right-radius: 20px;}
  }
+
+  h1 {
+    text-shadow: none;
+  }
 
 </style>
