@@ -4,7 +4,7 @@
     <div class="game">
       <router-link :to="{ name: 'minigame', params: {lessons} }">
         <h3>Picture Game</h3>
-        <img src="https://images.unsplash.com/photo-1586527155314-1d25428324ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" width="350">
+        <img src="https://images.unsplash.com/photo-1580722434936-3d175913fbdc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" width="350">
       </router-link>
     </div>
 

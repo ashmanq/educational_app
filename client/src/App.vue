@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <nav>
-      <h1><router-link :to="{ name: 'home'}">DISCOVERY WORLD</router-link></h1>
+      <router-link :to="{ name: 'home'}"><img src="@/assets/logo.png" alt=""></router-link>
+
     </nav>
     <router-view id="view"></router-view>
   </div>
@@ -20,13 +21,14 @@ export default {
 <style>
 
   html {
-    background-image: url("https://images.unsplash.com/photo-1501619757722-90657a99803b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    background-image: url("https://images.unsplash.com/photo-1587588354456-ae376af71a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
     margin: auto;
     background-attachment: fixed;
+
   }
 
   body {

@@ -1,36 +1,44 @@
 <template lang="html">
   <div class="container">
     <h1> Guess The Picture</h1>
-    <div v-if="images.length" class="">
+    <div v-if="(images.length && !showResults)" class="">
       <div class="row">
         <img :src="chosenImage.pic" alt="">
         <div class="col">
-          <!-- <button type="button" name="button">A</button>
-          <button type="button" name="button">B</button>
-          <button type="button" name="button">C</button>
-          <button type="button" name="button">D</button> -->
-          <p class="choices" draggable="true" v-on:ondragstart="drag" v-for="(value, index) in choices">{{ value }}</p>
+            <drag :data="value" :id="'choice'+index" class="choices" draggable="true" v-for="(value, index) in choices">{{ value }}</drag>
         </div>
       </div>
+        <p>{{ this.message }}</p>
       <div class="row">
-        <div id="answer" v-on:ondrop="drop" v-on:ondragover="allowDrop">
-          <p class="selection">Drag Answer Here</p>
-        </div>
+        <drop id="answer" @drop="onCopyDrop">
+          <p class="selection">{{selectedAnswer}}</p>
+        </drop>
       </div>
-
-      <p></p>
-      <button v-on:click="chooseImage" type="button" name="button">New Game</button>
+      <button id="sub-answer" v-on:click="checkAnswer" type="button" name="button">Submit</button>
     </div>
-    <div v-if="!images.length" class="">
+
+    <div v-if="!images.length && !showResults" class="">
       <p> Please complete at least one lesson before playing this minigame. </p>
     </div>
-    <router-link :to="{ name: 'home' }">
-      <button class="center" type="button" name="button">Home Page</button>
-    </router-link>
+
+    <!-- Results -->
+    <div v-if="showResults">
+        <img v-if="result" class="winner" src="https://www.svgrepo.com/show/293851/trophy.svg"></img>
+        <img v-if="!result" class="winner" src="https://www.svgrepo.com/show/102509/sad.svg"></img>
+        <h2>{{ message}}</h2>
+        <button class="center" v-on:click="newGame" type="button" name="button">New Game</button>
+        <router-link :to="{ name: 'home' }">
+          <button class="center" type="button" name="button">Home Page</button>
+        </router-link>
+    </div>
+
   </div>
 </template>
 
 <script>
+
+import { Drag, Drop, DropMask } from "vue-easy-dnd";
+
 export default {
   name: 'picture-game',
   props: ['lessons'],
@@ -41,6 +49,10 @@ export default {
       chosenLesson: null,
       currentIndex: null,
       choices: null,
+      selectedAnswer: "",
+      message: "Drag your answer to the box below",
+      showResults: false,
+      result: false,
     }
   },
   mounted() {
@@ -63,6 +75,8 @@ export default {
     },
 
     chooseImage: function() {
+      this.selectedAnswer = "";
+      this.message = "Drag your answer to the box below";
       let randomIndex = Math.floor(Math.random() * this.images.length);
       // Sometimes the same number is generated twice. To prevent this
       // we run a while loop until the randomIndex differs from the current
@@ -84,22 +98,36 @@ export default {
       this.choices = options;
     },
 
-    allowDrop: function(e){
-      e.preventDefault();
+    checkAnswer: function() {
+      if(this.selectedAnswer !== ""){
+        if(this.selectedAnswer === this.chosenImage.name) {
+          this.message = "You win!";
+          this.result = true;
+        } else {
+          this.message = "Wrong answer!";
+          this.result = false;
+        }
+        this.showResults = true;
+      } else {
+        this.message = "Please select an answer"
+      }
     },
 
-    drag: function(e) {
-      e.dataTransfer.setData("text", e.target.id);
-      console.log('hi');
-
+    onCopyDrop(e) {
+      this.selectedAnswer = e.data;
+      this.message= "Press submit to submit answer";
     },
 
-    drop: function(e) {
-      e.preventDefault();
-      let data = e.dataTransfer.getData("text");
-      e.target.appendChild(document.getElementById(data));
-      console.log('hi');
-    }
+    newGame() {
+      this.showResults= false;
+      this.message = "";
+      this.chooseImage();
+    },
+  },
+  components: {
+    Drag,
+    Drop,
+    DropMask
   }
 
 }
@@ -123,6 +151,7 @@ export default {
 .row {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .col {
@@ -133,13 +162,14 @@ export default {
 }
 
 .choices {
-  font-size: 1.4em;
+  font-size: 1.2em;
   background-color: #f5ce42;
   padding:10px;
   color: #2C3E50;
   border-radius: 5px;
   width:100%;
   min-width: 200px;
+  margin: 20px;
 }
 
 img {
@@ -153,10 +183,17 @@ img {
   height: 70px;
   padding: 10px;
   border: 1px solid #aaaaaa;
-  background-color: #aaaaaa;
-  border-radius: 5px;
+  background-color: white;
+  border-radius: 10px;
   align-self: center;
-  color: #2C3E50;
-  font-size: 1.2em;
+  color: blue;
+  font-size: 1.3em;
+  border-style: solid;
+  border-width: medium;
+  border-color: blue;
+}
+
+#sub-answer {
+  margin-bottom: 50px;
 }
 </style>
