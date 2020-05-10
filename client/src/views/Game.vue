@@ -2,7 +2,7 @@
   <div class="flashcard">
     <h1> Quiz </h1>
     <h2 v-if="!showResults"> Question {{ pageNo + 1 }} of {{ questions.length }}</h2>
-    <h2 v-bind:class="message">Please select an answer.</h2>
+    <h2 v-bind:class="message" class="warning-msg">Please select an answer.</h2>
       <flashcards v-bind:class="checkPage(index)" v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
 
       <div v-if="!showResults" class="pages">
@@ -66,6 +66,7 @@ export default {
     changePage(changeType) {
       if(changeType==='prev' && this.pageNo != 0) {
         this.pageNo -= 1;
+        this.message = "hideMessage";
       }
       else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
         if (this.answers[this.pageNo] !== '')
@@ -81,9 +82,10 @@ export default {
   },
   mounted() {
     eventBus.$on(`selected-answer`, (answer) => {
-      const index = answer.answerIndex
-      this.answers.splice(index, 1, answer.value)
-    })
+      const index = answer.answerIndex;
+      this.answers.splice(index, 1, answer.value);
+      this.message = "hideMessage";
+    });
   }
 }
 </script>
@@ -92,6 +94,8 @@ export default {
 
   h1 {
     color: white;
+    padding-top: 42px;
+    /* margin: 0px 42px; */
   }
 
   .page-no {
@@ -114,6 +118,10 @@ export default {
 
   .show {
     visibility: visible;
+  }
+
+  .warning-msg {
+    color:red;
   }
 
   .hideMessage {
