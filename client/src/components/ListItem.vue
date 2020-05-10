@@ -59,8 +59,9 @@ export default {
   }
 
   .completed {
-      border-style: solid;
-      border-color: red;
+      /* border-style: solid;
+      border-color: red; */
+      background-color: #739B57;
   }
 
 

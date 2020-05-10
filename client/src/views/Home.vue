@@ -1,4 +1,5 @@
 <template lang="html">
+
   <div class="list">
     <lesson-list :lessons="lessons"></lesson-list>
   </div>
@@ -19,6 +20,8 @@ export default {
   mounted() {
     LessonService.getLessons()
     .then((lessons) => this.lessons = lessons);
+
+
   },
   components: {
     'lesson-list': LessonList
@@ -27,5 +30,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+  #progress-bar-custom-bounds {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
 
 </style>
