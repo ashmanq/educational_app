@@ -2,7 +2,7 @@
 
   <div class="list">
     <lesson-list :lessons="lessons"></lesson-list>
-    <minigames-list></minigames-list>
+    <minigames-list :lessons="lessons"></minigames-list>
   </div>
 
 </template>

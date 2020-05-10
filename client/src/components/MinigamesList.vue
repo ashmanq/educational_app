@@ -1,12 +1,26 @@
 <template lang="html">
   <div class="games-list">
     <h1>Minigames</h1>
-    
+    <div class="game">
+      <router-link :to="{ name: 'minigame', params: {lessons} }">
+        <h3>Picture Slide Game</h3>
+        <img src="https://images.unsplash.com/photo-1586527155314-1d25428324ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" width="350">
+      </router-link>
+    </div>
+
   </div>
 </template>
 
 <script>
+
+import PictureSlide from '@/components/minigames/PictureSlide.vue';
+
 export default {
+  name: 'minigames-list',
+  props: ['lessons'],
+  components: {
+    'picture-slide': PictureSlide,
+  }
 }
 </script>
 
@@ -23,4 +37,29 @@ export default {
   margin-top: 20px;
 
 }
+
+.game {
+  display: flex;
+  flex-direction: column;
+  background-color: #F5CE42;
+  margin: 35px;
+  color: #2C3E50;
+  transition: 0.3s;
+}
+
+img {
+  width: 350px;
+  height: 250px;
+}
+
+a {
+  color: #2C3E50;
+}
+
+.game:hover {
+  animation: myfirst 0.1s;
+  position: relative;
+  animation-fill-mode: forwards;
+}
+
 </style>
