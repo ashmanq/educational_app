@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="lesson">
+  <div v-bind:class="checkComplete()" class="lesson">
     <router-link :to="{ name: 'lesson', params: {lesson} }">
       <h3>The {{ lesson.name }}</h3>
       <img v-bind:src="lesson.image" width="350">
@@ -13,8 +13,15 @@ export default {
   props: ['lesson'],
 
   methods: {
-    openLessonPage() {
-
+    checkComplete() {
+      // let newClass = "";
+      if(this.lesson.lesson_complete === "true"){
+        return "completed";
+      }
+      // else {
+      //   newClass = "";
+      // }
+      // return newClass;
     },
   },
 }
@@ -50,5 +57,11 @@ export default {
     0% {top: 0;}
     100% {top: 5px;}
   }
+
+  .completed {
+      border-style: solid;
+      border-color: red;
+  }
+
 
 </style>

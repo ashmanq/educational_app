@@ -169,7 +169,7 @@ db.lessons.insertMany(
           {
             question: "How many times do we blink in a day?",
             answers: ["10", "10,000", "100,000,000", "5"],
-            correct: "10000"
+            correct: "10,000"
           },
           {
             question: "How many teeth are in a set a human adult teeth?",
