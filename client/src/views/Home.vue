@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="list">
     <lesson-list :lessons="lessons"></lesson-list>
+    <minigames-list></minigames-list>
   </div>
 
 </template>
@@ -8,6 +9,7 @@
 <script>
 import LessonList from '@/components/LessonList.vue';
 import LessonService from '@/services/LessonService.js';
+import MinigamesList from '@/components/MinigamesList.vue';
 import {eventBus} from '@/main.js';
 
 export default {
@@ -21,7 +23,8 @@ export default {
     .then((lessons) => this.lessons = lessons);
   },
   components: {
-    'lesson-list': LessonList
+    'lesson-list': LessonList,
+    'minigames-list': MinigamesList
   }
 }
 </script>
