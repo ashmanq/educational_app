@@ -21,9 +21,6 @@ export default {
       keyValue: this.$vnode.key
     }
   },
-  methods: {
-
-      },
   components: {
     'answer': Answer
   }

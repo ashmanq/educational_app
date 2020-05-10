@@ -67,6 +67,7 @@ export default {
     changePage(changeType) {
       if(changeType==='prev' && this.pageNo != 0) {
         this.pageNo -= 1;
+        this.message = "hideMessage";
       }
       else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
         if (this.answers[this.pageNo] !== '')
@@ -82,9 +83,10 @@ export default {
   },
   mounted() {
     eventBus.$on(`selected-answer`, (answer) => {
-      const index = answer.answerIndex
-      this.answers.splice(index, 1, answer.value)
-    })
+      const index = answer.answerIndex;
+      this.answers.splice(index, 1, answer.value);
+      this.message = "hideMessage";
+    });
   }
 }
 </script>
@@ -97,6 +99,8 @@ export default {
 
   h1 {
     color: white;
+    padding-top: 42px;
+    /* margin: 0px 42px; */
   }
 
   h2 {
@@ -123,6 +127,10 @@ export default {
 
   .show {
     visibility: visible;
+  }
+
+  .warning-msg {
+    color:red;
   }
 
   .hideMessage {
