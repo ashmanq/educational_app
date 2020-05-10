@@ -152,6 +152,7 @@ export default {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .col {
@@ -174,7 +175,7 @@ export default {
 
 img {
   width: 350px;
-  height: 350px;
+  height: 220px;
   border-radius: 10px;
 }
 

@@ -27,11 +27,11 @@ export default {
   .lesson {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, rgba(245,206,66,1) 0%, rgba(175,146,43,1) 63%);
+    background: linear-gradient(180deg, rgba(245,206,66,1) 0%, rgba(217,183,60,1) 57%);
     margin: 35px;
     color: #2C3E50;
     transition: 0.3s;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 
   .lesson img {

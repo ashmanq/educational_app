@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="games-list">
-    <h1>Minigames</h1>
+    <h2>Minigames</h2>
     <div class="game">
       <router-link :to="{ name: 'minigame', params: {lessons} }">
         <h3>Picture Game</h3>
@@ -46,6 +46,8 @@ export default {
   margin: 35px;
   color: #2C3E50;
   transition: 0.3s;
+  background: linear-gradient(180deg, rgba(245,206,66,1) 0%, rgba(217,183,60,1) 57%);
+  border-radius: 3px;
 }
 
 img {
@@ -63,4 +65,8 @@ a {
   animation-fill-mode: forwards;
 }
 
+@keyframes myfirst {
+  0% {top: 0;}
+  100% {top: 5px;}
+}
 </style>
