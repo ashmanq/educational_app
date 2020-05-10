@@ -3,7 +3,7 @@
     <h1>Minigames</h1>
     <div class="game">
       <router-link :to="{ name: 'minigame', params: {lessons} }">
-        <h3>Picture Slide Game</h3>
+        <h3>Picture Game</h3>
         <img src="https://images.unsplash.com/photo-1586527155314-1d25428324ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" width="350">
       </router-link>
     </div>
@@ -41,6 +41,7 @@ export default {
 .game {
   display: flex;
   flex-direction: column;
+  width:auto;
   background-color: #F5CE42;
   margin: 35px;
   color: #2C3E50;
