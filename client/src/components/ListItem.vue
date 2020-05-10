@@ -14,14 +14,9 @@ export default {
 
   methods: {
     checkComplete() {
-      // let newClass = "";
       if(this.lesson.lesson_complete === "true"){
         return "completed";
       }
-      // else {
-      //   newClass = "";
-      // }
-      // return newClass;
     },
   },
 }
@@ -59,9 +54,7 @@ export default {
   }
 
   .completed {
-      /* border-style: solid;
-      border-color: red; */
-      background-color: #739B57;
+      background-color: rgb(43,194,83);
   }
 
 
