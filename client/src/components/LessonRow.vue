@@ -72,7 +72,7 @@ h2 {
 }
 
 .row-image {
-  border-radius: 800px;
+  border-radius: 10px;
   width:70%;
   height:300px;
 }

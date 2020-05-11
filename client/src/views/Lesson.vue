@@ -72,7 +72,7 @@ export default {
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    height: 70vh;
+    height: 75vh;
   }
 
   .row {
