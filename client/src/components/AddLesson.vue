@@ -1,31 +1,39 @@
 <template lang="html">
-<div class>
-<h4>Select Lesson</h4>
+<div class="menu">
+  <h4>Create a new lesson or choose an existing one from the dropdown.</h4>
 
-<form v-on:submit.prevent="handleSubmit" method="post">
+    <form v-on:submit.prevent="handleSubmit()" method="post">
+      <div class="new">
+        <div class="newLabels">
+          <label for="name">Name</label>
+          <!-- <br> -->
+          <label for="image">Image URL</label>
+        </div>
 
-<label for="name">Name:</label>
-<input type="text" id="name" v-model="name" required>
+        <div class="newInputs">
+          <input type="text" id="name" v-model="name" required>
+          <!-- <br> -->
+          <input type="text" id="image" v-model="image" required>
+        </div>
+      </div>
 
-<br>
 
-<label for="image">Image URL:</label>
-<input type="text" id="image" v-model="image" required>
+      <br>
 
-<br>
+      <input type="submit" value="Save Lesson">
 
-<input type="submit" value="Save Lesson">
+    </form>
 
-</form>
+    <br>
 
-<label for="selectLesson"></label>
-<select v-model="selectedLesson">
+  <label for="selectLesson"></label>
+  <select v-model="selectedLesson">
 
-  <option v-for="(lesson, index) in lessons" :lessons="lessons" :key="index" :value="lesson">{{lesson.name}}</option>
+    <option v-for="(lesson, index) in lessons" :lessons="lessons" :key="index" :value="lesson">{{lesson.name}}</option>
 
-</select>
+  </select>
 
-<lesson-detail :selectedLesson="selectedLesson"></lesson-detail>
+  <lesson-detail :selectedLesson="selectedLesson"></lesson-detail>
 
 </div>
 </template>
@@ -66,7 +74,36 @@ components: {
 </script>
 
 <style lang="css" scoped>
-form {
-  background-color: white;
+.menu {
+  /* background-color: white; */
+  color: white;
+}
+
+.new {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
+}
+
+.newLabels {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.newInputs {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+label {
+  margin: 5px;
+}
+
+input[type="text"] {
+  margin: 5px;
 }
 </style>

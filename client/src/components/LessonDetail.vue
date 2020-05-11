@@ -2,48 +2,56 @@
 
 <div v-if="selectedLesson">
 
-<div v-for="(detail, index) in selectedLesson.details" :detail="detail" :selectedLesson="selectedLesson">
+  <div v-for="(detail, index) in selectedLesson.details" :detail="detail" :selectedLesson="selectedLesson">
 
-<form id="editLesson" v-on:submit.prevent="handleEdit">
+    <form id="editLesson" v-on:submit.prevent="handleEdit">
 
-<h3>Detail Name</h3>
+      <h3>Detail Name</h3>
 
-<textarea class="lessonName" v-model="detail.name"></textarea>
+      <textarea class="lessonName" v-model="detail.name"></textarea>
 
-<h3>Image Source</h3>
+      <h3>Image Source</h3>
 
-<textarea class="lessonImage" v-model="detail.pic"></textarea>
+      <textarea class="lessonImage" v-model="detail.pic"></textarea>
 
-<h3>Detail Text</h3>
+      <h3>Detail Text</h3>
 
-<textarea class="lessonText" v-model="detail.text"></textarea>
+      <textarea class="lessonText" v-model="detail.text"></textarea>
 
-<br>
+    <br>
 
-<input type="submit" value="Save Changes">
+    <input type="submit" value="Save Changes">
 
-</form>
+    </form>
 
-<question-detail :selectedLesson="selectedLesson"></question-detail>
+  <!-- <question-detail :selectedLesson="selectedLesson"></question-detail> -->
 
-</div>
+    </div>
 
-<div v-for="(question, index) in selectedLesson.questions" :selectedLesson="selectedLesson">
+    <div v-for="(question, index) in selectedLesson.questions" :selectedLesson="selectedLesson">
 
-<label for="question">Question:</label>
-<input v-model="question.question" name="" value="">
+      <div class="new">
+        <div class="newQuestion">
+          <label for="question">Question</label>
+          <label for="correctAnswer">Correct Answer</label>
+          <label for="answers">Possible Answers</label>
+        </div>
 
-<label for="correctAnswer">Correct Answer</label>
-<input v-model="question.correct" value="">
+        <div class="newCorrect">
+          <input v-model="question.question" name="" value="" class="question">
+          <input v-model="question.correct" value="" class="correct">
+          <input type="text" name="" value="" v-model="question.answers">
+        </div>
 
-<br>
+        <!-- <question-detail>
+        </question-detail> -->
 
-<question-detail>
-</question-detail>
+        <!-- <p>{{question.answers}}</p> -->
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </div>
 
@@ -95,7 +103,41 @@ height: 100px;
 }
 
 div {
-  background-color: white;
+  /* background-color: white; */
+}
+
+label {
+  margin: 5px;
+}
+
+input {
+  margin: 5px;
+}
+
+.new {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+.newQuestion {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  /* align-items: center; */
+}
+
+.newCorrect {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.question {
+  width: 320px;
 }
 
 </style>
