@@ -6,7 +6,7 @@
       <div class="column">
         <h2>{{ lessonRow.name }}</h2>
         <p>{{ lessonRow.text }}</p>
-        <button v-bind:class="{'btn-playing': playing}" v-if="recording" class="btn-center" v-on:click="playAudio()" type="button" name="button"> Play Audio<img class=" icon" :src="require('@/assets/playBtn.svg')" alt=""></button>
+        <button v-bind:class="{'btn-playing': playing}" v-if="recording" class="btn-center" v-on:click="playAudio()" type="button" name="button"> Play Audio<span ><img class=" icon" :src="require('@/assets/playBtn.svg')" alt=""></span></button>
       </div>
     </div>
 </template>
@@ -110,6 +110,10 @@ h2 {
 
 .btn-playing {
   background-color: green;
+}
+
+.btn-playing span {
+  display: none;
 }
 
 .btn-playing:hover {
