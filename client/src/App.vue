@@ -80,7 +80,6 @@ export default {
     color: #f5ce42;
   }
 
-}
 
 body {
   /* margin-top: 2%; */
