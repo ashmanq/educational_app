@@ -41,7 +41,7 @@ export default {
         this.pageNo -= 1;
         eventBus.$emit('stop-playback');
       }
-      else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
+      else if(changeType==='next' && this.pageNo < this.details.length - 1) {
         this.pageNo += 1;
         eventBus.$emit('stop-playback');
       }
