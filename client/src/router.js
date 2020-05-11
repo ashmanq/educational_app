@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home';
 import Lesson from '@/views/Lesson';
 import Game from '@/views/Game';
-import AddLesson from '@/views/AddLessonView'
+import EditLesson from '@/views/AlterLesson'
 import Minigames from '@/views/Minigames'
 
 Vue.use(Router)
@@ -29,9 +29,9 @@ const router = new Router({
       props: true
     },
     {
-      path: '/addlesson',
-      name: 'addLesson',
-      component: AddLesson,
+      path: '/editlesson',
+      name: 'editLesson',
+      component: EditLesson,
       props: true
     },
     {

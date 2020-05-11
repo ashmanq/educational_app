@@ -1,46 +1,193 @@
 <template lang="html">
   <div class="">
-    <div class="new">
+    <form v-on:submit.prevent="addNewLesson" v-if="newLesson && !submitted" >
+      <h3>Lesson Name</h3>
+      <input class="lesson-input" type="text" id="name" v-model="newLesson.name" required>
+      <h3>Lesson Image URL</h3>
+      <input class="lesson-input" type="text" id="image" v-model="newLesson.image" required>
 
-        <h3>Lesson Name</h3>
-        <input type="text" id="name" v-model="name" required>
+      <div v-for="(topic, index) in newLesson.details" :topic="topic" :key="index" class="column">
+        <h3>Topic Name: {{ index + 1 }}</h3>
+        <input class="lesson-input" type="text"  v-model="topic.name" required>
 
-        <h3>Lesson Image URL</h3>
-        <input type="text" id="image" v-model="image" required>
+        <h3>Topic Image URL: {{ index + 1 }}</h3>
+        <input class="lesson-input" type="text" v-model="topic.pic" required>
 
-        <h3>Topic Name</h3>
-        <input type="text" id="topic" name="" value="">
+        <h3>Topic Information: {{ index + 1 }}</h3>
+        <textarea class="lesson-input-box" type="text"  v-model="topic.text" required></textarea>
+        <button v-if="index > 0" v-on:click="deleteDetails(index)" type="button">Delete Topic {{ index + 1}}</button>
+      </div>
 
-        <h3>Topic Image URL</h3>
-        <input type="text" id="topicImg" name="" value="">
+      <button v-on:click="addDetails" type="button">Add New Topic</button>
 
-        <h3>Topic Information</h3>
-        <textarea type="text" id="topicInfo" name="" value=""></textarea>
-
-        <div class="questions">
-          <div class="newQuestion">
-            <label for="question">Question</label>
-            <label for="correctAnswer">Correct Answer</label>
-            <label for="answers">Possible Answers</label>
+      <div v-for="(question, index) in newLesson.questions" :question="question" :key="'q' + index" class="column">
+        <div class="row">
+          <div class="column">
+            <label class="q-label" for="question">Question: {{ index + 1 }}</label>
+            <label class="q-label" for="correctAnswer">Correct Answer: {{ index + 1 }}</label>
+            <label class="q-label" for="answers">Possible Answers: {{ index + 1 }}</label>
           </div>
-          <div class="newCorrect">
-            <input name="" value="" class="question">
-            <input value="" class="correct">
-            <input value="" class="question">
+          <div class="column">
+            <input v-model="question.question" type="text" class="q-input" required>
+            <input v-model="question.correct" type="text" class="q-input" required>
+            <input v-model="question.answers" type="text"  class="q-input" required>
           </div>
         </div>
-    </div>
-    <br>
+        <button v-if="index > 0" v-on:click="deleteQuestion(index)" type="button" name="button">Delete Question {{ index + 1 }}</button>
 
-    <button v-on:click.stop="handleSubmit" type="button" name="button">Submit</button>
+      </div>
+      <div class="column">
+        <button v-on:click="addQuestion" type="button" name="button">Add Question</button>
+        <p></p>
+        <input class="btn" type="submit" name="Add New Lesson" value="Add New Lesson">
+      </div>
+    </form>
+
+    <div v-if="submitted">
+        <p> The lesson has been added! </p>
+        <router-link :to="{ name: 'home' }"><button type="button" name="button">Back to Home Page</button></router-link>
+    </div>
   </div>
 
 </template>
 
 <script>
+
+import {eventBus} from '@/main.js';
+
 export default {
+  name: 'new-lesson',
+  props: ['lesson'],
+  data() {
+    return {
+      newLesson: this.checkLesson(),
+      submitted: false,
+    }
+  },
+  methods: {
+    checkLesson() {
+      if(!this.lesson) {
+        const lesson = {
+          name: null,
+          image: null,
+          details: [{ name:null , text:null , pic: null }],
+          questions: [{ question: null, correct: null, answers: null }]
+        };
+        return lesson;
+      }
+    },
+    addNewLesson() {
+      //We convert the answers back from a string into arrays.
+      const convertedAnswers = this.newLesson.questions.map((question) => {
+        return question.answers.split(',')
+      });
+      convertedAnswers.forEach((answer, i) => {
+        this.newLesson.questions[i].answers = answer;
+      });
+
+      eventBus.$emit('add-new-lesson', this.newLesson);
+      this.submitted = true;
+    },
+
+    addQuestion() {
+      const newQuestion = { question: null, correct: null, answers: null };
+      this.newLesson.questions.push(newQuestion);
+    },
+
+    addDetails() {
+      const newDetails = { name:null , text:null , pic: null };
+      this.newLesson.details.push(newDetails);
+    },
+
+    deleteQuestion(index) {
+      this.newLesson.questions.splice(index, 1);
+    },
+
+    deleteDetails(index) {
+      this.newLesson.details.splice(index, 1);
+    }
+  }
 }
 </script>
 
 <style lang="css" scoped>
+
+.lesson-input {
+  font-size: 1.2em;
+  width: 50%;
+}
+
+.lesson-input-box {
+  font-size: 1.2em;
+  width: 50%;
+  height: 100px;
+}
+
+
+label {
+  margin: 5px;
+}
+
+input {
+  margin: 5px;
+}
+
+button {
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  padding: 10px;
+  padding: 25px 0px;
+  font-size: 1.2em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+.q-input {
+  width:100%;
+  font-size:1.2em;
+}
+
+.q-label {
+  width:100%;
+  font-size: 1.2em
+}
+
+.question {
+  width: 320px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #f5ce42;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  width: 250px;
+  color: #2C3E50;
+  margin: 10px 50px;
+  margin-bottom: 15px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: white;
+  border-color: orange;
+  cursor: pointer;
+}
+
 </style>

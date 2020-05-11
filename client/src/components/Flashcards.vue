@@ -2,7 +2,7 @@
   <div class="box">
     <p>{{question.question}}</p>
       <div class="row">
-        <answer v-for="(answer, index) in question.answers" :answer="answer" :key="index" :indexValue="keyValue"></answer>
+        <answer v-for="(answer, index) in shuffledAnswers" :answer="answer" :key="index" :indexValue="keyValue"></answer>
       </div>
   </div>
 </template>
@@ -16,10 +16,18 @@ export default {
   props: ['question'],
   data() {
     return {
-      userAnswers: 0,
+      shuffledAnswers: this.shuffleArray(this.question.answers),
       selectedAnswer: null,
       keyValue: this.$vnode.key
     }
+  },
+  methods: {
+    // Method to shuffle array
+    shuffleArray: (arr) => {
+      return arr.map(a => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map(a => a[1]);
+    },
   },
   components: {
     'answer': Answer
