@@ -27,6 +27,7 @@ export default {
     .then((lessons) => this.lessons = lessons);
 
     eventBus.$on('new-lesson', (newLesson) => {
+
      LessonService.addLesson(newLesson)
     .then(newLesson => this.lessons.push(newLesson))
     })
