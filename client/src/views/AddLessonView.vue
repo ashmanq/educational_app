@@ -21,23 +21,12 @@ export default {
     };
   },
   props: ['lesson'],
-    // methods: {
-    // handleSubmit() {
-    //   const newLesson = {
-    //     name: this.name,
-    //     image: this.image
-    //   }
-      // eventBus.$emit('post-lesson', newLesson);
-      // this.name = ""
-      // this.image = "";
-    // }
-  // },
 
   mounted() {
     LessonService.getLessons()
     .then((lessons) => this.lessons = lessons);
 
-    eventBus.$on('post-lesson', newLesson => {
+    eventBus.$on('new-lesson', (newLesson) => {
      LessonService.addLesson(newLesson)
     .then(newLesson => this.lessons.push(newLesson))
     })

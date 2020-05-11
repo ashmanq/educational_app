@@ -8,8 +8,7 @@ export default {
   addLesson(newLesson) {
     return fetch(baseUrl, {
       method: 'POST',
-      body:
-      JSON.stringify(newLesson),
+      body: JSON.stringify(newLesson),
       headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json());
