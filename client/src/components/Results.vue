@@ -1,6 +1,6 @@
 <template lang="">
   <div class="container">
-    <h2> Results </h2>
+    <!-- <h2> Results </h2> -->
 
     <div v-if="count == questions.length">
       <img class="winner" src="https://www.svgrepo.com/show/293851/trophy.svg"></img>

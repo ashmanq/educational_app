@@ -14,14 +14,9 @@ export default {
 
   methods: {
     checkComplete() {
-      // let newClass = "";
       if(this.lesson.lesson_complete === "true"){
         return "completed";
       }
-      // else {
-      //   newClass = "";
-      // }
-      // return newClass;
     },
   },
 }
@@ -32,10 +27,11 @@ export default {
   .lesson {
     display: flex;
     flex-direction: column;
-    background-color: #F5CE42;
+    background: linear-gradient(180deg, rgba(245,206,66,1) 0%, rgba(217,183,60,1) 57%);
     margin: 35px;
     color: #2C3E50;
     transition: 0.3s;
+    border-radius: 3px;
   }
 
   .lesson img {
@@ -59,8 +55,7 @@ export default {
   }
 
   .completed {
-      border-style: solid;
-      border-color: red;
+      background: linear-gradient(180deg, rgba(43,194,83,1) 0%, rgba(29,116,52,1) 63%);
   }
 
 
