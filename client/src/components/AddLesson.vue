@@ -54,7 +54,7 @@ export default {
       image: this.image
     }
     eventBus.$emit('post-lesson', newLesson);
-    this.name =
+    this.name = "";
     this.image = "";
   }
 },

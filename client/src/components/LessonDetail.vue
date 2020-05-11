@@ -38,7 +38,7 @@
 
 <br>
 
-<question-detail v-for="(answer, index) in question.answers" :answer="answer">
+<question-detail>
 </question-detail>
 
 </div>
@@ -67,12 +67,8 @@ data() {
 },
 methods: {
   handleEdit() {
-  eventBus.$emit('lesson-edited', this.$data);
-  const payload = {
-  name: this.name,
-  pic: this.pic,
-  text: this.text
-}
+  eventBus.$emit('lesson-updated', this.$data);
+
 }
 },
 components: {

@@ -2,8 +2,13 @@
 
 <span>
 
-<label for="allAnswers">All Answers</label>
-<input v-if="answer" type="text" v-model="answer" value="">
+<form class="" action="index.html" method="post">
+
+<label for="allAnswers"></label>
+
+<input type="text" :answer="answer">
+
+</form>
 
 </span>
 
@@ -16,4 +21,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 </style>

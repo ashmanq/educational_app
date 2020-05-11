@@ -1,5 +1,5 @@
 <template lang="html">
-<add-lesson :lessons="lessons"></add-lesson>
+<add-lesson :lessons="lessons" :selectedLesson="selectedLesson"></add-lesson>
 </template>
 
 <script>
@@ -11,7 +11,8 @@ import LessonService from '@/services/LessonService.js'
 export default {
   data() {
     return {
-      lessons: []
+      lessons: [],
+      selectedLesson: null
     };
   },
   props: ['lesson'],
@@ -36,10 +37,11 @@ export default {
 
     eventBus.$on('lesson-updated', lesson => {
       const updatedLesson = {
-        ...lesson,
+        name: this.name,
+        image: this.image
       }
       LessonService.updateLesson(updatedLesson);
-      const index = this.lessons.details.findIndex(lesson => lesson._id === updatedLesson._id);
+      const index = this.lessons.findIndex(lesson => lesson._id === updatedLesson._id);
       this.lessons.details.splice(index, 1, updatedLesson)
     })
   })
