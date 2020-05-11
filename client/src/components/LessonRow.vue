@@ -5,9 +5,8 @@
       </div>
       <div class="column">
         <h2>{{ lessonRow.name }}</h2>
-        <button v-bind:class="{'btn-playing': playing}" v-if="recording" class="btn-center" v-on:click="playAudio()" type="button" name="button"> Play Audio
-        <img class=" icon" :src="require('@/assets/playBtn.svg')" alt=""> </button>
         <p>{{ lessonRow.text }}</p>
+        <button v-bind:class="{'btn-playing': playing}" v-if="recording" class="btn-center" v-on:click="playAudio()" type="button" name="button"> Play Audio<img class=" icon" :src="require('@/assets/playBtn.svg')" alt=""></button>
       </div>
     </div>
 </template>
@@ -82,6 +81,8 @@ h2 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .container {
@@ -97,7 +98,7 @@ h2 {
 
 .btn-center {
   display: flex;
-  margin-top: 20px;
+  margin-top: 0px;
   align-self: center;
   align-content: center;
   justify-content: center;
