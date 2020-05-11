@@ -1,8 +1,9 @@
 <template lang="html">
   <div class="flashcard">
-    <h1> Quiz </h1>
-    <h2 v-if="!showResults"> Question {{ pageNo + 1 }} of {{ questions.length }}</h2>
-    <h2 v-bind:class="message">Please select an answer.</h2>
+    <!-- <h1> Quiz </h1> -->
+    <br>
+    <h2 v-if="!showResults"> Question {{ pageNo + 1 }} of {{ questions.length }}.</h2>
+    <p class="please" v-bind:class="message">Please select an answer.</p>
       <flashcards v-bind:class="checkPage(index)" v-if="questions && !showResults" v-for="(question, index) in questions" :question="question" :key="index" ></flashcards>
 
       <div v-if="!showResults" class="pages">
@@ -66,6 +67,7 @@ export default {
     changePage(changeType) {
       if(changeType==='prev' && this.pageNo != 0) {
         this.pageNo -= 1;
+        this.message = "hideMessage";
       }
       else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
         if (this.answers[this.pageNo] !== '')
@@ -81,22 +83,33 @@ export default {
   },
   mounted() {
     eventBus.$on(`selected-answer`, (answer) => {
-      const index = answer.answerIndex
-      this.answers.splice(index, 1, answer.value)
-    })
+      const index = answer.answerIndex;
+      this.answers.splice(index, 1, answer.value);
+      this.message = "hideMessage";
+    });
   }
 }
 </script>
 
 <style>
 
+  .please {
+    font-size: 1.3em;
+  }
+
   h1 {
     color: white;
+    padding-top: 42px;
+    /* margin: 0px 42px; */
+  }
+
+  h2 {
   }
 
   .page-no {
-    margin: 0px 50px;
+    margin: 0px 30px;
   }
+
   .flashcard {
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
@@ -114,6 +127,10 @@ export default {
 
   .show {
     visibility: visible;
+  }
+
+  .warning-msg {
+    color:red;
   }
 
   .hideMessage {
@@ -139,7 +156,8 @@ export default {
     border-radius: 4px;
     width: 250px;
     color: #2C3E50;
-    margin: 15px 50px;
+    margin: 0px 50px;
+    margin-bottom: 15px;
     transition: 0.2s;
   }
 
