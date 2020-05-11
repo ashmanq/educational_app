@@ -1,14 +1,13 @@
 <template lang="html">
     <div class="item">
       <div class="column">
-        <img v-bind:src="lessonRow.pic" v-bind:alt="lessonRow.name">
-        <img class="center" :src="require('@/assets/playBtn.svg')" alt="">
+        <img class="row-image" v-bind:src="lessonRow.pic" v-bind:alt="lessonRow.name">
       </div>
       <div class="column">
         <h2>{{ lessonRow.name }}</h2>
         <p>{{ lessonRow.text }}</p>
-        <button class="center" v-on:click="playAudio()" type="button" name="button">Play Audio</button>
-
+        <button v-bind:class="{'btn-playing': playing}" v-if="recording" class="btn-center" v-on:click="playAudio()" type="button" name="button"> Play Audio
+        <img class=" icon" :src="require('@/assets/playBtn.svg')" alt=""> </button>
       </div>
     </div>
 </template>
@@ -23,28 +22,46 @@ export default {
   data() {
     return {
       recording: null,
-      recordingLocation: null
+      playing: false,
     }
   },
   mounted() {
-    if(this.lessonRow.recording){
-      const lessonRecording = new Audio(require(`@/assets/recordings/${this.lessonRow.recording}`));
+    // We automatically create a name using the name of the row.
+    const recordingName = this.lessonRow.name.toLowerCase().replace(/ /g,"-") + '.mp3';
+    // We then check to see if the file exists. If it doesnt then nothing is allocated to
+    // recording.
+    try {
+      const lessonRecording = new Audio(require(`@/assets/recordings/${recordingName}`));
       this.recording = lessonRecording;
-    };
+    }
+    catch(e){
+
+    }
 
     eventBus.$on('stop-playback', () => {
       if(this.recording){
         this.recording.pause();
+        this.playing = false;
       }
     })
   },
   beforeDestroy(){
-    this.recording.pause()
+    if(this.recording){
+      this.recording.pause()
+      this.playing = false;
+    }
   },
   methods: {
     playAudio: function() {
-      this.recording.currentTime = 0;
-      this.recording.play()
+      if(!this.playing){
+        this.recording.currentTime = 0;
+        this.recording.play()
+        this.playing = true;
+      } else {
+        this.recording.pause();
+        this.playing = false;
+      }
+
     }
   }
 }
@@ -55,7 +72,7 @@ h2 {
   font-size: 2em;
 }
 
-img {
+.row-image {
   border-radius: 800px;
   width:70%;
   height:300px;
@@ -78,8 +95,27 @@ img {
   color: white;
 }
 
-.center {
+.btn-center {
+  display: flex;
   margin-top: 20px;
   align-self: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.btn-playing {
+  background-color: green;
+}
+
+.btn-playing:hover {
+  background-color: lightgreen;
+  border-color: green;
+}
+
+.icon {
+  margin-left: 15px;
+  height:30px;
 }
 </style>

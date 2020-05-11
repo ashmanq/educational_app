@@ -1,5 +1,6 @@
 <template lang="html">
    <div class="lesson-list">
+       <h2><router-link :to="{ name: 'addLesson', params: {lessons} }">Add Lesson</router-link></h2>
      <!-- <h1>Lessons</h1> -->
      <br>
      <div class="meter">
