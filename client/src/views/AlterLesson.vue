@@ -16,15 +16,19 @@ export default {
   name: "add-lesson-view",
   props: ['lessons'],
   mounted() {
-    eventBus.$on('new-lesson', (newLesson) => {
-      console.log("Fire!");
+    eventBus.$on('add-new-lesson', (newLesson) => {
       LessonService.addNewLesson(newLesson);
-    })
+    });
 
     eventBus.$on('lesson-updated', (updatedLesson) => {
       const _id = updatedLesson._id;
-      delete updatedLesson._id
-      LessonService.updateLesson(_id, updatedLesson)
+      delete updatedLesson._id;
+      LessonService.updateLesson(_id, updatedLesson);
+    });
+
+    eventBus.$on('delete-lesson', (lesson) => {
+      LessonService.deleteLesson(lesson._id);
+      console.log(lesson);
     })
   },
   beforeDestroy() {
