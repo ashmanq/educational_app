@@ -5,7 +5,8 @@ export default {
     return fetch(baseUrl)
     .then(res => res.json());
   },
-  addLesson(newLesson) {
+  addNewLesson(newLesson) {
+    console.log(newLesson);
     return fetch(baseUrl, {
       method: 'POST',
       body: JSON.stringify(newLesson),
