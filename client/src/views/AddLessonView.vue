@@ -39,7 +39,7 @@ export default {
 
     eventBus.$on('post-lesson', newLesson => {
      LessonService.addLesson(newLesson)
-    .then(lesson => this.lessons.push(lesson))
+    .then(newLesson => this.lessons.push(newLesson))
     })
 
     eventBus.$on('lesson-updated', lesson => {
