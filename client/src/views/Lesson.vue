@@ -39,9 +39,11 @@ export default {
     changePage(changeType) {
       if(changeType==='prev' && this.pageNo != 0) {
         this.pageNo -= 1;
+        eventBus.$emit('stop-playback');
       }
       else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
         this.pageNo += 1;
+        eventBus.$emit('stop-playback');
       }
     }
   },

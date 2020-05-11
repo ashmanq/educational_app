@@ -61,7 +61,7 @@ export default {
       name: this.name,
       image: this.image
     }
-    eventBus.$emit('post-lesson', newLesson);
+    eventBus.$emit('new-lesson', newLesson);
     this.name = "";
     this.image = "";
   }
