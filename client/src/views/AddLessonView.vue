@@ -1,29 +1,21 @@
 <template lang="html">
   <div class="addLessonContainer">
-    <div class="form">
-      <add-lesson :lessons="lessons"></add-lesson>
-    </div>
+    <add-lesson :lessons="lessons"></add-lesson>
   </div>
-
 </template>
 
 <script>
 
-import {eventBus} from '@/main.js'
-import AddLesson from '@/components/AddLesson.vue'
+import AddLessonComponent from '@/components/AddLesson.vue';
+import {eventBus} from '@/main.js';
 import LessonService from '@/services/LessonService.js'
 
 export default {
+  name: "add-lesson-view",
   props: ['lessons'],
-  data() {
-    return {
-      selectedLesson: null
-    };
-  },
-
-
   mounted() {
     eventBus.$on('new-lesson', (newLesson) => {
+<<<<<<< HEAD
 
      LessonService.addLesson(newLesson)
     .then(newLesson => this.lessons.push(newLesson))
@@ -40,20 +32,28 @@ export default {
     })
 
 },
+=======
+      console.log("Fire!");
+      LessonService.addNewLesson(newLesson);
+    })
+  },
+  beforeDestroy() {
+    eventBus.$off()
+  },
+>>>>>>> 332720ce44c8dc9b86fd57785accfa6e1378479d
   components: {
-   'add-lesson': AddLesson
- }
-}
+    'add-lesson': AddLessonComponent,
+  }
 
+}
 </script>
 
 <style lang="css" scoped>
-  .addLessonContainer {
+.addLessonContainer {
     background: rgba(0, 0, 0, 0.7);
     width: 99vw;
     border-radius: 10px;
   }
-
   .form {
     width: 40vw;
     display: flex;

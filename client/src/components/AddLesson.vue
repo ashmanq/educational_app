@@ -1,6 +1,6 @@
 <template lang="html">
 <div class="menu">
-  <h4>Create a new lesson or choose an existing one from the dropdown.</h4>
+  <h3>Create a new lesson or choose an existing one from the dropdown.</h3>
 
       <div class="new">
         <div class="newLabels">
@@ -16,7 +16,7 @@
       </div>
       <br>
 
-      <button v-on:click="handleSubmit" type="button" name="button">Submit</button>
+      <button v-on:click.stop="handleSubmit" type="button" name="button">Submit</button>
 
     <br>
 
@@ -40,14 +40,18 @@ import LessonService from '@/services/LessonService.js'
 import { eventBus } from '@/main.js'
 
 export default {
-  name: "add-lesson",
+  name: "add-lesson-component",
   props: ["lessons"],
   data() {
     return {
     selectedLesson: null,
     name: null,
-    image: null
+    image: null,
+    lessonList: null,
   }
+},
+mounted(){
+  this.lessonList = this.lessons;
 },
   methods: {
   handleSubmit() {
@@ -55,6 +59,8 @@ export default {
       name: this.name,
       image: this.image
     }
+    this.lessonList.push(newLesson);
+    console.log("Ready!");
     eventBus.$emit('new-lesson', newLesson);
     this.name = "";
     this.image = "";
