@@ -5,6 +5,7 @@
       <img v-bind:src="lesson.image" width="350">
     </router-link>
   </div>
+
 </template>
 
 <script>

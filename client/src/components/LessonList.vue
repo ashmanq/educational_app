@@ -9,6 +9,8 @@
      <p class="">Lessons Completed: {{completedLessons}}/{{lessons.length}}</p>
       <div class="lessons">
         <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
+        <img class="plus" src="@/assets/plus.svg" alt="">
+
       </div>
   </div>
 
@@ -69,7 +71,7 @@ export default {
   .lessons {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -117,6 +119,14 @@ export default {
 
   h1 {
     text-shadow: none;
+  }
+
+  .plus {
+    width: 10%;
+    height: 10%;
+    display: flex;
+    align-self: center;
+    /* margin: 35px; */
   }
 
 </style>
