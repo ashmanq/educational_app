@@ -1,5 +1,10 @@
 <template lang="html">
-<add-lesson :lessons="lessons" :selectedLesson="selectedLesson"></add-lesson>
+  <div class="addLessonContainer">
+    <div class="form">
+      <add-lesson :lessons="lessons" :selectedLesson="selectedLesson"></add-lesson>
+    </div>
+  </div>
+
 </template>
 
 <script>
@@ -16,24 +21,26 @@ export default {
     };
   },
   props: ['lesson'],
-    methods: {
-    handleSubmit() {
-      const newLesson = {
-        name: this.name,
-        image: this.image
-      }
-      eventBus.$emit('post-lesson', newLesson);
-      this.name = ""
-      this.image = "";
-    }
-  },
+    // methods: {
+    // handleSubmit() {
+    //   const newLesson = {
+    //     name: this.name,
+    //     image: this.image
+    //   }
+      // eventBus.$emit('post-lesson', newLesson);
+      // this.name = ""
+      // this.image = "";
+    // }
+  // },
 
   mounted() {
     LessonService.getLessons()
     .then((lessons) => this.lessons = lessons);
 
-    eventBus.$on('post-lesson', newLesson => { LessonService.addLesson(newLesson)
+    eventBus.$on('post-lesson', newLesson => {
+     LessonService.addLesson(newLesson)
     .then(lesson => this.lessons.push(lesson))
+    })
 
     eventBus.$on('lesson-updated', lesson => {
       const updatedLesson = {
@@ -44,7 +51,7 @@ export default {
       const index = this.lessons.findIndex(lesson => lesson._id === updatedLesson._id);
       this.lessons.details.splice(index, 1, updatedLesson)
     })
-  })
+
 },
   components: {
    'add-lesson': AddLesson
@@ -54,4 +61,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .addLessonContainer {
+    background: rgba(0, 0, 0, 0.7);
+    width: 99vw;
+    border-radius: 10px;
+  }
+
+  .form {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
 </style>

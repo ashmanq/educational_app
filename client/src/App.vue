@@ -15,18 +15,6 @@ import {eventBus} from '@/main.js';
 
 export default {
   name: 'App',
-  // data() {
-  //   return {
-  //     lessons: []
-  //   };
-  // },
-  // mounted() {
-  //   LessonService.getLessons()
-  //   .then((lessons) => this.lessons = lessons);
-  // },
-  // components: {
-  //   'lesson-list': LessonList
-  // }
 }
 </script>
 
