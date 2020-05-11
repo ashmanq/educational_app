@@ -75,7 +75,6 @@ components: {
 
 <style lang="css" scoped>
 .menu {
-  /* background-color: white; */
   color: white;
 }
 
@@ -84,7 +83,6 @@ components: {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* align-content: center; */
 }
 
 .newLabels {

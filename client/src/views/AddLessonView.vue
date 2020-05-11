@@ -20,6 +20,12 @@ export default {
       console.log("Fire!");
       LessonService.addNewLesson(newLesson);
     })
+
+    eventBus.$on('lesson-updated', (updatedLesson) => {
+      const _id = updatedLesson._id;
+      delete updatedLesson._id
+      LessonService.updateLesson(_id, updatedLesson)
+    })
   },
   beforeDestroy() {
     eventBus.$off()
@@ -38,7 +44,7 @@ export default {
     border-radius: 10px;
   }
   .form {
-    width: 40vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     margin: auto;
