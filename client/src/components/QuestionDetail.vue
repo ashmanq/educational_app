@@ -4,7 +4,7 @@
 
 <form class="" action="index.html" method="post">
 
-<label for="allAnswers"></label>
+<label for="allAnswers">{{answer}}</label>
 
 <input type="text" :answer="answer">
 
