@@ -5,9 +5,9 @@
       </div>
       <div class="column">
         <h2>{{ lessonRow.name }}</h2>
-        <p>{{ lessonRow.text }}</p>
         <button v-bind:class="{'btn-playing': playing}" v-if="recording" class="btn-center" v-on:click="playAudio()" type="button" name="button"> Play Audio
         <img class=" icon" :src="require('@/assets/playBtn.svg')" alt=""> </button>
+        <p>{{ lessonRow.text }}</p>
       </div>
     </div>
 </template>
@@ -103,6 +103,7 @@ h2 {
   justify-content: center;
   text-align: center;
   align-items: center;
+  padding: 5px;
 }
 
 .btn-playing {
