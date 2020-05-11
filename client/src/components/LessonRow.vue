@@ -92,6 +92,7 @@ h2 {
 .column {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width:60%;
   color: white;
 }
