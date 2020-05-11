@@ -12,6 +12,7 @@
         <button v-on:click="deleteTopic(index)" type="button" name="button">Delete Topic</button>
       </div>
     </div>
+    <button v-on:click="addNewTopic" type="button" name="button">Add New Topic</button>
     <div class="lessonQuestions">
       <div v-for="(question, index) in selectedLesson.questions" :selectedLesson="selectedLesson">
         <div class="new">
@@ -29,6 +30,7 @@
         <button v-on:click="deleteQuestion(index)" type="button" name="button">Delete Question</button>
       </div>
     </div>
+    <button v-on:click="addNewQuestion" type="button" name="button">Add New Question</button>
   </div>
   <button class="button" v-if="selectedLesson" type="button" name="button" v-on:click="handleEdit">Update Lesson</button>
 </div>
@@ -59,6 +61,26 @@ methods: {
 
   deleteQuestion(index) {
     this.selectedLesson.questions.splice(index, 1)
+  },
+
+  addNewTopic() {
+    const newTopic = {
+      name: null,
+      pic: null,
+      info: null
+    }
+
+    this.selectedLesson.details.push(newTopic)
+  },
+
+  addNewQuestion() {
+    const newQuestion = {
+      question: null,
+      correct: null,
+      answers: null
+    }
+
+    this.selectedLesson.questions.push(newQuestion)
   }
 },
 components: {
