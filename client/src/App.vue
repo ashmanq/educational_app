@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <nav>
-      <h5><router-link :to="{ name: 'addLesson' }">Add Lesson</router-link></h5>
       <router-link :to="{ name: 'home'}"><img src="@/assets/logo.png" alt=""></router-link>
     </nav>
     <router-view id="view"></router-view>
