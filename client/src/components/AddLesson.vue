@@ -27,7 +27,7 @@
 
   </select>
 
-  <!-- <lesson-detail :selectedLesson="selectedLesson"></lesson-detail> -->
+  <lesson-detail :selectedLesson="selectedLesson"></lesson-detail>
 
 </div>
 </template>

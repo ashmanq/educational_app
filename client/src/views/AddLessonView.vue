@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="addLessonContainer">
-    <add-lesson :lessons="lessons"></add-lesson>
+    <div class="form">
+      <add-lesson :lessons="lessons"></add-lesson>
+    </div>
   </div>
 </template>
 
@@ -15,24 +17,6 @@ export default {
   props: ['lessons'],
   mounted() {
     eventBus.$on('new-lesson', (newLesson) => {
-<<<<<<< HEAD
-
-     LessonService.addLesson(newLesson)
-    .then(newLesson => this.lessons.push(newLesson))
-    })
-
-    eventBus.$on('lesson-updated', lesson => {
-      const updatedLesson = {
-        name: this.name,
-        image: this.image
-      }
-      LessonService.updateLesson(id, updatedLesson);
-      const index = this.lessons.findIndex(lesson => lesson._id === updatedLesson._id);
-      this.lessons.details.splice(index, 1, updatedLesson)
-    })
-
-},
-=======
       console.log("Fire!");
       LessonService.addNewLesson(newLesson);
     })
@@ -40,7 +24,6 @@ export default {
   beforeDestroy() {
     eventBus.$off()
   },
->>>>>>> 332720ce44c8dc9b86fd57785accfa6e1378479d
   components: {
     'add-lesson': AddLessonComponent,
   }
