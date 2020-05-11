@@ -2,38 +2,32 @@
 <div class="menu">
   <h4>Create a new lesson or choose an existing one from the dropdown.</h4>
 
-    <form v-on:submit.prevent="handleSubmit()" method="post">
       <div class="new">
         <div class="newLabels">
           <label for="name">Name</label>
           <!-- <br> -->
           <label for="image">Image URL</label>
         </div>
-
         <div class="newInputs">
           <input type="text" id="name" v-model="name" required>
           <!-- <br> -->
           <input type="text" id="image" v-model="image" required>
         </div>
       </div>
-
-
       <br>
 
-      <input type="submit" value="Save Lesson">
-
-    </form>
+      <button v-on:click="handleSubmit" type="button" name="button">Submit</button>
 
     <br>
 
   <label for="selectLesson"></label>
   <select v-model="selectedLesson">
 
-    <option v-for="(lesson, index) in lessons" :lessons="lessons" :key="index" :value="lesson">{{lesson.name}}</option>
+    <option v-for="(lesson, index) in lessons" :lesson="lesson" :key="index" :value="lesson">{{lesson.name}}</option>
 
   </select>
 
-  <lesson-detail :selectedLesson="selectedLesson"></lesson-detail>
+  <!-- <lesson-detail :selectedLesson="selectedLesson"></lesson-detail> -->
 
 </div>
 </template>
