@@ -14,13 +14,14 @@ import AddLesson from '@/components/AddLesson.vue'
 import LessonService from '@/services/LessonService.js'
 
 export default {
+  props: ['lesson'],
   data() {
     return {
       lessons: [],
       selectedLesson: null
     };
   },
-  props: ['lesson'],
+
 
   mounted() {
     LessonService.getLessons()

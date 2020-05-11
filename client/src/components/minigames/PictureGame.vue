@@ -90,12 +90,14 @@ export default {
     },
 
     createChoices: function() {
-      const lessonDetails = this.lessons[this.chosenImage.lessonIndex].details;
-      const options = lessonDetails.map((row) => {
-        return row.name;
-      });
+      if(this.images.length){
+        const lessonDetails = this.lessons[this.chosenImage.lessonIndex].details;
+        const options = lessonDetails.map((row) => {
+          return row.name;
+        });
 
-      this.choices = options;
+        this.choices = options;
+      }
     },
 
     checkAnswer: function() {
