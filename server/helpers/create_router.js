@@ -32,7 +32,7 @@ const createRouter = function(collection) {
   router.post('/', (req, res) => {
     const newLesson = req.body;
     collection
-    insertOne(newLesson)
+    .insertOne(newLesson)
     .then((result) => {
       res.json(result.ops[0])
     })

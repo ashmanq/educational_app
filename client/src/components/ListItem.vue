@@ -1,7 +1,7 @@
 <template lang="html">
   <div v-bind:class="checkComplete()" class="lesson">
     <router-link :to="{ name: 'lesson', params: {lesson} }">
-      <h3>The {{ lesson.name }}</h3>
+      <h3>{{ lesson.name }}</h3>
       <img v-bind:src="lesson.image" width="350">
     </router-link>
   </div>

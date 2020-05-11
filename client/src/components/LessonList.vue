@@ -5,7 +5,7 @@
      <div class="meter">
        <span :style="progress "></span>
      </div>
-     <p class="">Completed: {{completedLessons}}/{{lessons.length}}</p>
+     <p class="">Lessons Completed: {{completedLessons}}/{{lessons.length}}</p>
       <div class="lessons">
         <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
       </div>
