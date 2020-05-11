@@ -47,7 +47,7 @@ export default {
         name: this.name,
         image: this.image
       }
-      LessonService.updateLesson(updatedLesson);
+      LessonService.updateLesson(id, updatedLesson);
       const index = this.lessons.findIndex(lesson => lesson._id === updatedLesson._id);
       this.lessons.details.splice(index, 1, updatedLesson)
     })
