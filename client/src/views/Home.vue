@@ -22,8 +22,6 @@ export default {
   mounted() {
     LessonService.getLessons()
     .then((lessons) => this.lessons = lessons);
-
-
   },
   components: {
     'lesson-list': LessonList,
