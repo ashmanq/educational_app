@@ -282,7 +282,7 @@ db.lessons.insertMany(
       lesson_complete: "false",
       details: [{
             name: "Oxygen",
-            text: "Oxygen is the chemical element with the symbol O. It is a gas at room temperature. It is the third most common element in the entire universe and animals, plants and humans alike need it to live! It, combined with another, element, hydrogen to make water - the chemical formula for this is H<sub>2</sub>0.",
+            text: "Oxygen is the chemical element with the symbol O. It is a gas at room temperature. It is the third most common element in the entire universe and animals, plants and humans alike need it to live! It, combined with another, element, hydrogen to make water - the chemical formula for this is H20.",
             pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ea7536c62924fcb693ae7078a2428054/Untitled_Diagram.png"
           },
           {
