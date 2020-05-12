@@ -1,6 +1,6 @@
 <template lang="html">
    <div class="lesson-list">
-       <h2><router-link :to="{ name: 'editLesson', params: {lessons} }">Add Lesson</router-link></h2>
+       <h2></h2>
      <!-- <h1>Lessons</h1> -->
      <br>
      <div class="meter">
@@ -9,7 +9,10 @@
      <p class="">Lessons Completed: {{completedLessons}}/{{lessons.length}}</p>
       <div class="lessons">
         <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
-        <img class="plus" src="@/assets/plus.svg" alt="">
+        <div class="plusBox">
+          <router-link :to="{ name: 'editLesson', params: {lessons} }"><img class="plus" src="@/assets/plus.svg" alt=""></router-link>
+
+        </div>
 
       </div>
   </div>
@@ -122,11 +125,39 @@ export default {
   }
 
   .plus {
-    width: 10%;
-    height: 10%;
+    width: 70%;
+    height: 70%;
     display: flex;
     align-self: center;
     /* margin: 35px; */
+  }
+
+  .plusBox {
+    width: 350px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 35px;
+    align-content: center;
+    align-items: center;
+  }
+
+  a {
+    display: flex;
+    align-self: center;
+    margin-left: 80px;
+  }
+
+  a:hover {
+    animation: myfirst 0.1s;
+    position: relative;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes myfirst {
+    0% {top: 0;}
+    100% {top: 5px;}
   }
 
 </style>

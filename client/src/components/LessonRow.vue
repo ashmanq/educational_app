@@ -109,20 +109,22 @@ h2 {
 }
 
 .btn-playing {
-  background-color: green;
+  background-color: rgb(84,240,84);
 }
 
 .btn-playing span {
-  display: none;
+  /* display: none; */
 }
 
 .btn-playing:hover {
-  background-color: lightgreen;
-  border-color: green;
+  background-color: rgb(84,240,84);
+  border-color: rgb(43,194,83);
 }
 
 .icon {
   margin-left: 15px;
   height:30px;
+  display: flex;
+  align-self: center;
 }
 </style>
