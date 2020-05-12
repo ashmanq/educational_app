@@ -4,7 +4,7 @@
     <div class="game">
       <router-link v-bind:class="checkNoComplete(1)" :to="{ name: 'minigame', params: {lessons, game:'picgame'} }">
         <h3 v-if="checkComplete>=1">Picture Game</h3>
-        <h3 v-if="checkComplete<1" class='centered'>Complete 1 Lesson to unlock</h3>
+        <h3 v-if="checkComplete<1" class='centered'>Complete 1 lesson to unlock</h3>
         <img src="https://images.unsplash.com/photo-1580722434936-3d175913fbdc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" width="350">
       </router-link>
     </div>
@@ -12,7 +12,7 @@
     <div class="game">
       <router-link v-bind:class="checkNoComplete(2)" :to="{ name: 'game', params: {lesson, type:'quiz'} }">
         <h3 v-if="checkComplete>=2">Questionnaire</h3>
-        <h3 v-if="checkComplete<2" class='centered'>Complete 2 Lessons to unlock</h3>
+        <h3 v-if="checkComplete<2" class='centered'>Complete 2 lessons to unlock</h3>
         <img src="https://images.unsplash.com/photo-1539264374208-58df3521ddd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1396&q=80" width="350">
       </router-link>
     </div>

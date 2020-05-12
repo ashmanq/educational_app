@@ -31,6 +31,9 @@ export default {
     // recording.
     try {
       const lessonRecording = new Audio(require(`@/assets/recordings/${recordingName}`));
+      lessonRecording.onended = () => {
+        this.playing = false;
+      };
       this.recording = lessonRecording;
     }
     catch(e){
@@ -51,6 +54,10 @@ export default {
     }
   },
   methods: {
+    playEnd: function() {
+      console.log('Hi');
+      this.playing = false;
+    },
     playAudio: function() {
       if(!this.playing){
         this.recording.currentTime = 0;
