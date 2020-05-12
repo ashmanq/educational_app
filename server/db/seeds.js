@@ -283,17 +283,17 @@ db.lessons.insertMany(
       details: [{
             name: "Oxygen",
             text: "Oxygen is the chemical element with the symbol O. It is a gas at room temperature. It is the third most common element in the entire universe and animals, plants and humans alike need it to live! It, combined with another, element, hydrogen to make water - the chemical formula for this is H20.",
-            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ea7536c62924fcb693ae7078a2428054/Untitled_Diagram.png"
+            pic: "https://media.gettyimages.com/photos/air-bubbles-picture-id476891558?b=1&k=6&m=476891558&s=612x612&w=0&h=gDXHKqi8u4NRUHO5JaLmW2QKBead12VZP2A-i4ObbKA="
           },
           {
             name: 'Hydrogen',
             text: "Hydrogen is the chemical element with the symbol H. It is a gas at room temperature. It is the most common element in the Milky Way Galaxy. It is a gas at room temperature and is highly flammable, meaning that it catches fire very easily.",
-            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/0cb16afc6b09686dace08a8319d1e60c/hydrogen.png"
+            pic: "https://media.istockphoto.com/photos/hydrogen-element-picture-id172698318"
           },
           {
             name: 'Gold',
             text: "Gold is the chemical element with the symbol Au. It is a solid at room temperature. It is also one of the softer metal elements in it's purest form. This is why it's almost always mixed with other metal elements like silver or palladium. It is also used in electronics; 10% of the gold produced in the world is used for electronics!",
-            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ccba786edab72f8c0d4b8ec974c0b045/gold.png"
+            pic: "https://images.unsplash.com/photo-1543699565-003b8adda5fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
           }],
         questions: [
           { question: "Which element is most likely to be used in jewellery?",
