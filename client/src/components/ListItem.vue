@@ -56,6 +56,7 @@ export default {
 
   .completed {
       background: linear-gradient(180deg, rgba(43,194,83,1) 0%, rgba(29,116,52,1) 63%);
+      cursor: url(http://cur.cursors-4u.net/others/oth-7/oth674.cur), auto !important;
   }
 
 
