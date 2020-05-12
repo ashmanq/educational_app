@@ -41,7 +41,7 @@ export default {
       }
     });
 
-    if(this.count === this.questions.length) {
+    if(this.count === this.questions.length && this.lesson._id) {
       const updatedLesson = {
         lesson_complete: "true",
       };
