@@ -1,10 +1,11 @@
 <template lang="html">
   <div v-bind:class="checkComplete()" class="lesson">
     <router-link :to="{ name: 'lesson', params: {lesson} }">
-      <h3>The {{ lesson.name }}</h3>
+      <h3>{{ lesson.name }}</h3>
       <img v-bind:src="lesson.image" width="350">
     </router-link>
   </div>
+
 </template>
 
 <script>
@@ -56,6 +57,7 @@ export default {
 
   .completed {
       background: linear-gradient(180deg, rgba(43,194,83,1) 0%, rgba(29,116,52,1) 63%);
+      cursor: url(http://cur.cursors-4u.net/others/oth-7/oth674.cur), auto !important;
   }
 
 

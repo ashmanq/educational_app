@@ -5,11 +5,12 @@ export default {
     return fetch(baseUrl)
     .then(res => res.json());
   },
-  addLesson(payload) {
+  addNewLesson(newLesson) {
+    console.log(newLesson);
     return fetch(baseUrl, {
       method: 'POST',
-      body: JSON.stringify(payload),
-      headers: {'Content-Type': 'application/json'}
+      body: JSON.stringify(newLesson),
+      headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json());
   },
@@ -17,7 +18,7 @@ export default {
     return fetch(baseUrl + id, {
       method: 'PUT',
       body: JSON.stringify(payload),
-      headers: {'Content-Type': 'application/json'}
+      headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json())
   },

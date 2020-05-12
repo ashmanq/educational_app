@@ -8,7 +8,11 @@
       <!-- <h2 class="page-no">{{ pageNo + 1 }}</h2> -->
       <button v-if="pageNo < details.length - 1" v-on:click="changePage('next')" type="button" name="nextPage">Next</button>
       <router-link :to="{ name: 'game', params: {lesson} }">
-        <button v-if="(pageNo === details.length - 1)" type="submit" name="button">Test Your Knowledge</button>
+      <button v-if="(pageNo === details.length - 1 && questions.length)" type="submit" name="button">Test Your Knowledge</button>
+      </router-link>
+
+      <router-link :to="{ name: 'home' }">
+        <button v-if="(pageNo === details.length - 1 && !questions.length)" type="button" name="button">Back to Home Page</button>
       </router-link>
     </div>
   </div>
@@ -39,9 +43,11 @@ export default {
     changePage(changeType) {
       if(changeType==='prev' && this.pageNo != 0) {
         this.pageNo -= 1;
+        eventBus.$emit('stop-playback');
       }
-      else if(changeType==='next' && this.pageNo < this.questions.length - 1) {
+      else if(changeType==='next' && this.pageNo < this.details.length - 1) {
         this.pageNo += 1;
+        eventBus.$emit('stop-playback');
       }
     }
   },
@@ -66,7 +72,7 @@ export default {
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    height: 70vh;
+    height: 75vh;
   }
 
   .row {

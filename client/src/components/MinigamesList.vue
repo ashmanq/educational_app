@@ -2,9 +2,18 @@
   <div class="games-list">
     <h2>Minigames</h2>
     <div class="game">
-      <router-link :to="{ name: 'minigame', params: {lessons} }">
-        <h3>Picture Game</h3>
+      <router-link v-bind:class="checkNoComplete(1)" :to="{ name: 'minigame', params: {lessons, game:'picgame'} }">
+        <h3 v-if="checkComplete>=1">Picture Game</h3>
+        <h3 v-if="checkComplete<1" class='centered'>Complete 1 Lesson to unlock</h3>
         <img src="https://images.unsplash.com/photo-1580722434936-3d175913fbdc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" width="350">
+      </router-link>
+    </div>
+
+    <div class="game">
+      <router-link v-bind:class="checkNoComplete(2)" :to="{ name: 'game', params: {lesson, type:'quiz'} }">
+        <h3 v-if="checkComplete>=2">Questionnaire</h3>
+        <h3 v-if="checkComplete<2" class='centered'>Complete 2 Lessons to unlock</h3>
+        <img src="https://images.unsplash.com/photo-1539264374208-58df3521ddd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1396&q=80" width="350">
       </router-link>
     </div>
 
@@ -13,13 +22,67 @@
 
 <script>
 
-import PictureSlide from '@/components/minigames/PictureSlide.vue';
 
 export default {
   name: 'minigames-list',
   props: ['lessons'],
-  components: {
-    'picture-slide': PictureSlide,
+  data() {
+    return {
+      // checkComplete: this.countCompletedLessons(),
+      // lesson: {questions:[]},
+    }
+  },
+  mounted() {
+    this.createQuestionsList();
+    // this.countCompletedLessons();
+  },
+  computed: {
+    checkComplete: function() {
+      let count = 0;
+      this.lessons.forEach((lesson) => {
+        if(lesson.lesson_complete === "true"){
+              count += 1;
+            }
+      });
+      return count;
+    },
+    // The following will create the question list based on all lessons
+    // that have been completed
+    lesson: function() {
+      const questionsList = [];
+      this.lessons.forEach((indLesson) => {
+        if(indLesson.lesson_complete === "true"){
+          questionsList.push(indLesson.questions)
+        };
+      });
+      // We flatten the result array
+      const flatArray = questionsList.flat();
+      // We shuffle the questions arrau around
+      const shuffledArray = flatArray.map(a => [Math.random(), a])
+                            .sort((a, b) => a[0] - b[0])
+                            .map(a => a[1]);
+      // We then return the array as a questions object to lesson
+      return {questions: shuffledArray};
+    }
+  },
+  methods: {
+    checkNoComplete(requiredNo) {
+      if(this.checkComplete < requiredNo) {
+        return "disabled";
+      }
+    },
+    // We populate the questionaireLesson variable with all questions from
+    // lessons that have been completed
+    createQuestionsList() {
+      const questionsList = [];
+      this.lessons.forEach((lesson) => {
+        if(lesson.lesson_complete === "true"){
+          questionsList.push(lesson.questions)
+        };
+      });
+
+      this.lesson.questions.push(questionsList.flat())
+    },
   }
 }
 </script>
@@ -46,7 +109,7 @@ export default {
   margin: 35px;
   color: #2C3E50;
   transition: 0.3s;
-  background: linear-gradient(180deg, rgba(245,206,66,1) 0%, rgba(217,183,60,1) 57%);
+  background: linear-gradient(180deg, rgba(245,174,66,1) 0%, rgba(217,147,60,1) 57%);
   border-radius: 3px;
 }
 
@@ -59,11 +122,19 @@ a {
   color: #2C3E50;
 }
 
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: #878787;
+  border-radius: 3px;
+}
+
 .game:hover {
   animation: myfirst 0.1s;
   position: relative;
   animation-fill-mode: forwards;
 }
+
 
 @keyframes myfirst {
   0% {top: 0;}

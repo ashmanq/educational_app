@@ -1,13 +1,19 @@
 <template lang="html">
    <div class="lesson-list">
+       <h2></h2>
      <!-- <h1>Lessons</h1> -->
      <br>
      <div class="meter">
        <span :style="progress "></span>
      </div>
-     <p class="">Completed: {{completedLessons}}/{{lessons.length}}</p>
+     <p class="">Lessons Completed: {{completedLessons}}/{{lessons.length}}</p>
       <div class="lessons">
         <list-item v-for="(lesson, index) in lessons" :lesson="lesson" :key="index"></list-item>
+        <div class="plusBox">
+          <router-link :to="{ name: 'editLesson', params: {lessons} }"><img class="plus" src="@/assets/plus.svg" alt=""></router-link>
+
+        </div>
+
       </div>
   </div>
 
@@ -68,7 +74,7 @@ export default {
   .lessons {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -116,6 +122,42 @@ export default {
 
   h1 {
     text-shadow: none;
+  }
+
+  .plus {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-self: center;
+    /* margin: 35px; */
+  }
+
+  .plusBox {
+    width: 350px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 35px;
+    align-content: center;
+    align-items: center;
+  }
+
+  a {
+    display: flex;
+    align-self: center;
+    margin-left: 80px;
+  }
+
+  a:hover {
+    animation: myfirst 0.1s;
+    position: relative;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes myfirst {
+    0% {top: 0;}
+    100% {top: 5px;}
   }
 
 </style>

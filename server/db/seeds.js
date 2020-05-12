@@ -15,12 +15,12 @@ db.lessons.insertMany(
             },
             {
                 name: "Arctic Fox",
-                text: "The arctic fox is an incredibly hardy animal that can survive frigid Arctic temperatures as low as –58°F in the treeless lands where it makes its home. It has furry soles, short ears, and a short muzzle—all-important adaptations to the chilly clime. Arctic foxes live in burrows, and in a blizzard they may tunnel into the snow to create shelter and it may also use it's fluffy tail to protect it's body from the cold. They may live for up to 11 years. They eat a wide, varied diet and are excellent scavengers. They can develop complex social structures, with each fox playing a role in the pack.",
+                text: "The arctic fox is an incredibly hardy animal that can survive frigid Arctic temperatures as low as –58°F in the treeless lands where it makes its home. It has furry soles, short ears, and a short muzzle—all-important adaptations to the chilly clime. Arctic foxes live in burrows, and in a blizzard they may tunnel into the snow to create shelter and it may also use its fluffy tail to protect its body from the cold. They may live for up to 11 years. They eat a wide, varied diet and are excellent scavengers. They can develop complex social structures, with each fox playing a role in the pack.",
                 pic: "https://images.unsplash.com/photo-1485094142704-b05d3759b589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
             },
             {
                 name: "Emperor Penguin",
-                text: "Emperors are the largest of all penguins—an average bird stands some 45 inches tall. These flightless animals live on the Antarctic ice and in the frigid surrounding waters. They huddle together to escape wind and conserve warmth. Individuals take turns moving to the group's protected and relatively toasty interior. Once a penguin has warmed a bit it will move to the perimeter of the group so that others can enjoy protection from the icy elements. They can a lifespan of up to 50 years. There are currently around 600,000 emporer penguins in the wild.",
+                text: "Emperors are the largest of all penguins—an average bird stands some 45 inches tall. These flightless animals live on the Antarctic ice and in the frigid surrounding waters. They huddle together to escape wind and conserve warmth. Individuals take turns moving to the group's protected and relatively toasty interior. Once a penguin has warmed a bit it will move to the perimeter of the group so that others can enjoy protection from the icy elements. They can a lifespan of up to 50 years. There are currently around 600,000 emperor penguins in the wild.",
                 pic: "https://images.unsplash.com/photo-1551986781-2f5b76ad4a88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80"
             }
         ],
@@ -51,17 +51,17 @@ db.lessons.insertMany(
             correct: "Huddling"
           },
           {
-            question: "How many emporer penguins are there in the wild?",
+            question: "How many emperor penguins are there in the wild?",
             answers: ["100", "30,000", "600,000", "850,00"],
             correct: "600,000"
           },
           {
-            question: "An arctic fox uses it's tail to protect it from what?",
+            question: "An arctic fox uses its tail to protect it from what?",
             answers: ["Other Foxes", "Cold", "Birds", "Polar Bears"],
             correct: "Cold"
           },
           {
-            question: "What sense helps a polar bear hunt it's main food source, seals?",
+            question: "What sense helps a polar bear hunt its main food source, seals?",
             answers: ["Taste", "Hearing", "Smell", "Touch"],
             correct: "Smell"
           }
@@ -78,7 +78,7 @@ db.lessons.insertMany(
               },
               {
                   name: "Zebra",
-                  text: "No animal has a more distinctive coat than the zebra. Each animal's stripes are as unique as fingerprints—no two are exactly alike—although each of the three species has its own general pattern. The hotter the climage, the more stripes a zebra has though in rare cases, zebras have had black coats with white spots. They are highly social animals, who live in groups.",
+                  text: "No animal has a more distinctive coat than the zebra. Each animal's stripes are as unique as fingerprints—no two are exactly alike—although each of the three species has its own general pattern. The hotter the climate, the more stripes a zebra has though in rare cases, zebras have had black coats with white spots. They are highly social animals, who live in groups.",
                   pic: "https://images.unsplash.com/photo-1515205244153-fce4e5d8bc49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
               },
               {
@@ -119,8 +119,8 @@ db.lessons.insertMany(
             correct: "3 Feet"
           },
           {
-           question: "Which big cat is typically biger than a typical lion?",
-           answers: ["Tiger", "Dog", "Domestic Cat", "Lepoard"],
+           question: "Which big cat is typically bigger than a typical lion?",
+           answers: ["Tiger", "Dog", "Domestic Cat", "Leopard"],
            correct: "Tiger"
           },
           {
@@ -141,13 +141,13 @@ db.lessons.insertMany(
             },
             {
                 name: "Teeth",
-                text: "A person has two sets of teeth throughut their lifetimes, baby teeth and adult teeth. Teeth are also unique - any two people will have their own identical teeth! There are 20 teeth in a person's first set of teeth, increasing to 32 for a person's set of adult teeth. There are four seperate types of teeth.",
+                text: "A person has two sets of teeth throughout their lifetimes, baby teeth and adult teeth. Teeth are also unique - any two people will have their own identical teeth! There are 20 teeth in a person's first set of teeth, increasing to 32 for a person's set of adult teeth. There are four separate types of teeth.",
                 pic: "https://images.unsplash.com/photo-1530213709681-b7e537c923cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
             },
             {
                 name: "Hair",
                 text: "There is hair all over your body - from your head to your cheek. Some of the hair is so fine that we can't see it with our eyes, although other parts, like the hair on our head, is 100,000 hairs thick! Between 50 - 100 hairs fall out of your head every day, from washing your hair or brushing it. Each hair stays in our head for up to 6 years. The colour of hair comes from melanin. The lighter someone's hair is, the less melanin present.",
-                pic: "https://images.unsplash.com/photo-1581093581417-60b6c94a7945?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+                pic: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
             }
         ],
         questions: [
@@ -178,7 +178,7 @@ db.lessons.insertMany(
           },
           {
             question: "What determines how our hair is coloured?",
-            answers: ["Keratine", "Dopamine", "The Sun", "Melanin"],
+            answers: ["Keratin", "Dopamine", "The Sun", "Melanin"],
             correct: "Melanin"
           },
           {
@@ -255,7 +255,7 @@ db.lessons.insertMany(
       correct: "Neptune"
     },
     {
-      question: "Which planet is known for it's red colour?",
+      question: "Which planet is known for its red colour?",
       answers: ["Mars", "Venus", "Saturn", "Uranus"],
       correct: "Mars"
     },
@@ -275,6 +275,68 @@ db.lessons.insertMany(
       correct: "Saturn"
     }
     ]
-    }
-  ]
+    },
+    {
+      name: "Periodic Elements",
+      image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/cr/b8a1309a-ba53-48c7-bca3-9c36aab2338a.jpg",
+      lesson_complete: "false",
+      details: [{
+            name: "Oxygen",
+            text: "Oxygen is the chemical element with the symbol O. It is a gas at room temperature. It is the third most common element in the entire universe and animals, plants and humans alike need it to live! It, combined with another, element, hydrogen to make water - the chemical formula for this is H20.",
+            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ea7536c62924fcb693ae7078a2428054/Untitled_Diagram.png"
+          },
+          {
+            name: 'Hydrogen',
+            text: "Hydrogen is the chemical element with the symbol H. It is a gas at room temperature. It is the most common element in the Milky Way Galaxy. It is a gas at room temperature and is highly flammable, meaning that it catches fire very easily.",
+            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/0cb16afc6b09686dace08a8319d1e60c/hydrogen.png"
+          },
+          {
+            name: 'Gold',
+            text: "Gold is the chemical element with the symbol Au. It is a solid at room temperature. It is also one of the softer metal elements in it's purest form. This is why it's almost always mixed with other metal elements like silver or palladium. It is also used in electronics; 10% of the gold produced in the world is used for electronics!",
+            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ccba786edab72f8c0d4b8ec974c0b045/gold.png"
+          }],
+        questions: [
+          { question: "Which element is most likely to be used in jewellery?",
+            answers: ["Gold", "Oxygen", "Carbon", "Water"],
+            correct: "Gold"
+          },
+          {
+            question: "What element has the symbol Au?",
+            answers: ["Silver", "Oxygen", "Carbon", "Gold"],
+            correct: "Gold"
+          },
+          {
+            question: "Which element is most likely to be a gas at room temperature?",
+            answers: ["Gold", "Silver", "Hydrogen", "Water"],
+            correct: "Hydrogen"
+          },
+          {
+            question: "Which element has the symbol O?",
+            answers: ["Oxygen", "Water", "Carbon", "Silver"],
+            correct: "Oxygen"
+          },
+          {
+            question: "Which element is most likely to be used in electronics?",
+            answers: ["Oxygen", "Hydrogen", "Helium", "Gold"],
+            correct: "Gold"
+          },
+          {
+            question: "Which element has the symbol H?",
+            answers: ["Hydrogen", "Oxygen", "Gold", "Silver"],
+            correct: "Hydrogen"
+          },
+          {
+            question: "What does flammable mean?",
+            answers: ["Is always on fire", "Cannot catch fire", "Catches Fire easily", "Makes a cold fire"],
+            correct: "Catches fire easily"
+          },
+          {
+            question: "What is H20?",
+            answers: ["A poison", "Salt", "Water", "Air"],
+            correct: "Water"
+          }
+          ]
+}
+
+    ]
 )

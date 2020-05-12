@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/views/Home';
 import Lesson from '@/views/Lesson';
 import Game from '@/views/Game';
+import EditLesson from '@/views/AlterLesson'
 import Minigames from '@/views/Minigames'
 
 Vue.use(Router)
@@ -25,6 +26,12 @@ const router = new Router({
       path: '/game',
       name: 'game',
       component: Game,
+      props: true
+    },
+    {
+      path: '/editlesson',
+      name: 'editLesson',
+      component: EditLesson,
       props: true
     },
     {

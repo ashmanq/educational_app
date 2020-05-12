@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link :to="{ name: 'home'}"><img src="@/assets/logo.png" alt=""></router-link>
-
+      <router-link :to="{ name: 'home' }"><img src="@/assets/logo.png" alt=""></router-link>
     </nav>
     <router-view id="view"></router-view>
   </div>
@@ -68,4 +67,42 @@ export default {
     color: #f5ce42;
   }
 
+
+body {
+  /* margin-top: 2%; */
+  /* width: 70.19%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* margin: auto; */
+  /* height: 100vh; */
+  /* background-size: cover; */
+  /* margin-bottom: 2%; */
+  border-radius: 5px;
+}
+
+nav {
+  /* background-color: white; */
+  margin-top: 0;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  /* margin-top: 60px; */
+}
+
+h1 {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 2.2em;
+}
+
+a {
+  text-decoration: none;
+  color: #f5ce42;
+
+}
 </style>
