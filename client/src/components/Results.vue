@@ -1,18 +1,29 @@
 <template lang="">
   <div class="container">
     <!-- <h2> Results </h2> -->
-
-    <div v-if="count == questions.length">
-      <img class="winner" src="https://www.svgrepo.com/show/293851/trophy.svg"></img>
-      <h2> You're a winner! </h2>
+    <div v-if="!type">
+      <div v-if="count == questions.length">
+        <img class="winner" src="https://www.svgrepo.com/show/293851/trophy.svg"></img>
+        <h2> You're a winner! </h2>
+      </div>
+      <div  v-if="count < questions.length">
+        <img class="sadface" src="https://www.svgrepo.com/show/102509/sad.svg"></img>
+        <h2> Better luck next time! </h2>
+      </div>
+      <h2> You got {{ count }} out of {{ questions.length }} correct.</h2>
     </div>
 
-    <div  v-if="count < questions.length">
-      <img class="sadface" src="https://www.svgrepo.com/show/102509/sad.svg"></img>
-      <h2> Better luck next time! </h2>
+    <div v-if="type">
+      <div v-if="count == questions.length">
+        <img class="winner" src="https://www.svgrepo.com/show/293851/trophy.svg"></img>
+        <h2> You're a winner! </h2>
+      </div>
+      <div  v-if="count < questions.length">
+        <img class="sadface" src="https://www.svgrepo.com/show/102509/sad.svg"></img>
+        <h2> Better luck next time! </h2>
+      </div>
+      <h2> Your final score was: {{ score }}</h2>
     </div>
-
-    <h2> You got {{ count }} out of {{ questions.length }} correct.</h2>
 
     <button type="button" name="button"><router-link :to="{ name: 'home' }">Back to Home Page</router-link></button>
   </div>
@@ -25,7 +36,7 @@ import {eventBus} from '@/main.js';
 
 export default {
   name: 'results-view',
-  props: ['lesson', 'answers'],
+  props: ['lesson', 'answers', 'type', 'score'],
   data() {
     return {
       questions: this.lesson.questions,
