@@ -275,6 +275,68 @@ db.lessons.insertMany(
       correct: "Saturn"
     }
     ]
-    }
-  ]
+    },
+    {
+      name: "Periodic Elements",
+      image: "https://d2ebzu6go672f3.cloudfront.net/media/content/images/cr/b8a1309a-ba53-48c7-bca3-9c36aab2338a.jpg",
+      lesson_complete: "false",
+      details: [{
+            name: "Oxygen",
+            text: "Oxygen is the chemical element with the symbol O. It is a gas at room temperature. It is the third most common element in the entire universe and animals, plants and humans alike need it to live! It, combined with another, element, hydrogen to make water - the chemical formula for this is H20.",
+            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ea7536c62924fcb693ae7078a2428054/Untitled_Diagram.png"
+          },
+          {
+            name: 'Hydrogen',
+            text: "Hydrogen is the chemical element with the symbol H. It is a gas at room temperature. It is the most common element in the Milky Way Galaxy. It is a gas at room temperature and is highly flammable, meaning that it catches fire very easily.",
+            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/0cb16afc6b09686dace08a8319d1e60c/hydrogen.png"
+          },
+          {
+            name: 'Gold',
+            text: "Gold is the chemical element with the symbol Au. It is a solid at room temperature. It is also one of the softer metal elements in it's purest form. This is why it's almost always mixed with other metal elements like silver or palladium. It is also used in electronics; 10% of the gold produced in the world is used for electronics!",
+            pic: "https://trello-attachments.s3.amazonaws.com/5eb2cc1a9fc1de5b95b42ae3/5eb3fc7309233d1054762e33/ccba786edab72f8c0d4b8ec974c0b045/gold.png"
+          }],
+        questions: [
+          { question: "Which element is most likely to be used in jewellery?",
+            answers: ["Gold", "Oxygen", "Carbon", "Water"],
+            correct: "Gold"
+          },
+          {
+            question: "What element has the symbol Au?",
+            answers: ["Silver", "Oxygen", "Carbon", "Gold"],
+            correct: "Gold"
+          },
+          {
+            question: "Which element is most likely to be a gas at room temperature?",
+            answers: ["Gold", "Silver", "Hydrogen", "Water"],
+            correct: "Hydrogen"
+          },
+          {
+            question: "Which element has the symbol O?",
+            answers: ["Oxygen", "Water", "Carbon", "Silver"],
+            correct: "Oxygen"
+          },
+          {
+            question: "Which element is most likely to be used in electronics?",
+            answers: ["Oxygen", "Hydrogen", "Helium", "Gold"],
+            correct: "Gold"
+          },
+          {
+            question: "Which element has the symbol H?",
+            answers: ["Hydrogen", "Oxygen", "Gold", "Silver"],
+            correct: "Hydrogen"
+          },
+          {
+            question: "What does flammable mean?",
+            answers: ["Is always on fire", "Cannot catch fire", "Catches Fire easily", "Makes a cold fire"],
+            correct: "Catches fire easily"
+          },
+          {
+            question: "What is H20?",
+            answers: ["A poison", "Salt", "Water", "Air"],
+            correct: "Water"
+          }
+          ]
+}
+
+    ]
 )
