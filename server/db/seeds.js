@@ -328,7 +328,7 @@ db.lessons.insertMany(
           {
             question: "What does flammable mean?",
             answers: ["Is always on fire", "Cannot catch fire", "Catches Fire easily", "Makes a cold fire"],
-            correct: "Catches fire easily"
+            correct: "Catches Fire easily"
           },
           {
             question: "What is H20?",
