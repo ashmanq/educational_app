@@ -10,7 +10,7 @@
     </div>
 
     <div class="game">
-      <router-link v-bind:class="checkNoComplete(2)" :to="{ name: 'game', params: {lesson} }">
+      <router-link v-bind:class="checkNoComplete(2)" :to="{ name: 'game', params: {lesson, type:'quiz'} }">
         <h3 v-if="checkComplete>=2">Questionnaire</h3>
         <h3 v-if="checkComplete<2" class='centered'>Complete 2 Lessons to unlock</h3>
         <img src="https://cdn.pixabay.com/photo/2017/03/25/20/51/quiz-2174368_960_720.png" width="350">
