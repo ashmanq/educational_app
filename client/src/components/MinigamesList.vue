@@ -126,6 +126,7 @@ a.disabled {
   pointer-events: none;
   cursor: default;
   background-color: #878787;
+  border-radius: 3px;
 }
 
 .game:hover {
