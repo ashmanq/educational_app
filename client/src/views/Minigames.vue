@@ -1,30 +1,21 @@
 <template lang="html">
   <div class="container">
-    <picture-game v-if="lessons" :lessons="lessons"></picture-game>
+    <picture-game v-if="game=='picgame'" :lessons="lessons"></picture-game>
+    <!-- <questionnaire v-if="game=='question'" :lessons="lessons"></questionnaire> -->
   </div>
 </template>
 
 <script>
 
 import PictureGame from '@/components/minigames/PictureGame.vue';
+// import Questionnaire from '@/components/minigames/Questionnaire.vue';
 
 export default {
-  name: 'slide-puzzle',
-  props:['lessons'],
-  data() {
-    return {
-
-    }
-  },
-  mounted() {
-
-  },
-
-  methods: {
-  },
-
+  name: 'mini-games',
+  props:['lessons', 'game'],
   components: {
     'picture-game': PictureGame,
+    // 'questionnaire': Questionnaire,
   }
 
 }
@@ -34,58 +25,6 @@ export default {
 .container {
   justify-content: center;
 }
-#canvas {
-  width: 336px;
-  height: 335px;
-  border: 1px solid gray;
-  background-color: black; }
 
-#canvas #windiv {
-  display: none; }
-
-#canvas .banner {
-  width: 370px;
-  font-size: 50px;
-  background-color: #f5f5dc;
-  position: relative;
-  text-align: center;
-  top: -60px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.55);
-  left: -15px;
-  z-index: 2; }
-
-#canvas .innerSquare {
-  width: 110px;
-  height: 110px;
-  float: left; }
-
-#canvas .innerSquare.imageSquare {
-  font-size: 24px;
-  text-align: center;
-  border: 1px outset  black; }
-
-#canvas .innerSquare.imageSquare:hover {
-  background-color: lightgray; }
-
-#canvas .innerSquare.clickable:hover {
-  opacity: 0.4;
-  filter: alpha(opacity=40); }
-
-#canvas .innerSquare.blank {
-  border: 1px inset black; }
-
-#previews {
-  width: 308px;
-  height: 100px;
-  background-color: lightgrey;
-  overflow: scroll;
-  padding-left: 30px;
-  margin-top: 10px; }
-
-#previews .mini {
-  width: 90px;
-  height: 90px;
-  margin-top: 5px;
-  margin-right: 5px; }
 
 </style>
