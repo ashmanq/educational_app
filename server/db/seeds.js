@@ -327,7 +327,7 @@ db.lessons.insertMany(
           },
           {
             question: "What does flammable mean?",
-            answers: ["Is always on fire", "Cannot catch fire", "Catches Fire easily", "Makes a cold fire"],
+            answers: ["Is always on fire", "Cannot catch fire", "Catches fire easily", "Makes a cold fire"],
             correct: "Catches fire easily"
           },
           {
