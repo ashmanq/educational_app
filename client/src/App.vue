@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link :to="{ name: 'home' }"><img src="@/assets/logo.png" alt=""></router-link>
+      <router-link :to="{ name: 'home' }"><img class="logo" src="@/assets/logo.png" alt=""></router-link>
     </nav>
     <router-view id="view"></router-view>
   </div>
@@ -29,7 +29,10 @@ export default {
     background-attachment: fixed;
 
   }
-
+  .logo {
+    width: 600px;
+    margin-bottom: 50px;
+  }
   body {
     display: flex;
     flex-direction: row;
