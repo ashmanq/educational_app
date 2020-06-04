@@ -2,7 +2,7 @@
   <image width="200px" src="client/public/logo.png" alt="discovery world logo">
 </p>
   
-# Discovery World
+# Discovery World Educational App
 
 An educational app aimed towards kids that enjoy completing quizzes and minigames based on trivia. The app follows a progression system where each completed quiz counts towards the lesson completion progress bar.
 
@@ -27,11 +27,11 @@ The task was to make an interactive browser application that displays informatio
 
 ---
 ## Screenshots
-<img  src="/discoveryworldpreview1.png" alt="discovery world home page">
+<img  src="screenshots/discoveryworldpreview1.png" alt="discovery world home page">
 
-<img src="/discoveryworldpreview2.png" alt="discovery world lesson view">
+<img src="screenshots/discoveryworldpreview2.png" alt="discovery world lesson view">
 
-<img src="/discoveryworldpreview3.png" alt="discovery world lesson view">
+<img src="screenshots/discoveryworldpreview3.png" alt="discovery world lesson view">
 
 
 **Programming Language**: JavaScript
