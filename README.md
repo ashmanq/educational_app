@@ -1,12 +1,38 @@
-<img style="width: 300px;" src="https://github.com/alexgyllos/files/blob/master/discoveryworldpreview1.png" alt="discovery world home page">
-
-<img style="width: 300px;" src="https://github.com/alexgyllos/files/blob/master/discoveryworldpreview2.png" alt="discovery world lesson view">
-
-<img style="width: 300px;" src="https://github.com/alexgyllos/files/blob/master/discoveryworldpreview3.png" alt="discovery world lesson view">
-
+<p align="center">
+  <image width="300px" src="client/public/logo.png" alt="discovery world logo">
+</p>
+  
 # Discovery World
 
 An educational app aimed towards kids that enjoy completing quizzes and minigames based on trivia. The app follows a progression system where each completed quiz counts towards the lesson completion progress bar.
+
+## The Task
+The task was to make an interactive browser application that displays information in a fun and interesting way. We were, as a group, to make a prototype to demonstrate this.
+
+## The Objectives
+* A user should be able to view some educationsla content on a particular subject
+* The user should be able to interact with the page to move through different sections of content
+* To work together, as a group of three, to plan, implement, test and showcase our prototype after a week.
+
+## The app carries out the following
+* All lessons are stored on a back end using a MongoDB database and an Express server
+* A CMS system is in place to allow teachers to create, modify, update and delete lessons
+* Subjects are displayed as cards on the home page for users to click on
+* Each subject has multiple topics which the user can go through using navigation buttons
+* Each topic has a button to play spoken audio of the topic.
+* At the end of each lesson there is a multiple choice test for he user to play.
+* Successfully completing tests unlock minigames to be played at any time
+* A progress bar on the home page represents the percentage of all lessons completed
+
+
+---
+## Screenshots
+<img  src="/discoveryworldpreview1.png" alt="discovery world home page">
+
+<img src="/discoveryworldpreview2.png" alt="discovery world lesson view">
+
+<img src="/discoveryworldpreview3.png" alt="discovery world lesson view">
+
 
 **Programming Language**: JavaScript
 
