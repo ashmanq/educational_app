@@ -27,11 +27,11 @@ The task was to make an interactive browser application that displays informatio
 
 ---
 ## Screenshots
-<img  src="screenshots/discoveryworldpreview1.png" alt="discovery world home page">
+<img  src="screenshots/homepage.png" alt="discovery world home page">
 
-<img src="screenshots/discoveryworldpreview2.png" alt="discovery world lesson view">
+<img src="screenshots/lessontopic.png" alt="discovery world lesson view">
 
-<img src="screenshots/discoveryworldpreview3.png" alt="discovery world lesson view">
+<img src="screenshots/quiz.png" alt="discovery world lesson view">
 
 
 **Programming Language**: JavaScript
