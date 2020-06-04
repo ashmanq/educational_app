@@ -1,5 +1,5 @@
 <p align="center">
-  <image width="300px" src="client/public/logo.png" alt="discovery world logo">
+  <image width="200px" src="client/public/logo.png" alt="discovery world logo">
 </p>
   
 # Discovery World
