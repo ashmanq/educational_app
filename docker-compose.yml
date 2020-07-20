@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  server:
+    container_name: 'server'
+    ports:
+      - 3000:8080
+    build: ./server/
+    restart: on-failure
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./client/build/:/usr/share/nginx/html
+    ports:
+      - 8081:80
